@@ -33,7 +33,9 @@ public class RandomSpilt {
 		this.press(str, op);
 		
 	}
-	
+	public void setProessString(String str) throws FormatRandomSpiltException{
+		this.press(str, SPILTLINE);
+	}
 	
 	public void setProessString(String str,String op) throws FormatRandomSpiltException{
 		this.press(str, op);

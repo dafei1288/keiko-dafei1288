@@ -1,12 +1,17 @@
-package net.fly78.designpattern;
+package net.fly78.designpattern.human;
 import java.util.Observable;
 import java.util.Observer;
+
+import net.fly78.designpattern.IHuman;
+import net.fly78.designpattern.othertools.Glove;
+import net.fly78.designpattern.othertools.PlasticGlove;
+import net.fly78.designpattern.safetytools.Condom;
+import net.fly78.designpattern.safetytools.CondomAdpter;
 public  class ManImp extends WomanImp  implements Observer  {
-	private String name;
-	private String sex;
+	
 	private int i = 0;
 	
-	public ManImp(String name,String sex){
+	public ManImp(String name,Sex sex){
 		super(name,sex);
 	}
 	
@@ -33,6 +38,8 @@ public  class ManImp extends WomanImp  implements Observer  {
 			wi.getGift(gift);
 		}
 	}
+	
+	
 	/**
 	 * 观察者 更新的方法
 	 * */
@@ -42,7 +49,7 @@ public  class ManImp extends WomanImp  implements Observer  {
 				WomanImp wi = (WomanImp)o;
 				System.out.println(wi.getName()+"...收到 情人节礼物: 想ml了.....");
 				//this.ml(wi);
-				Glove glove = new Glove();
+				Glove glove = new PlasticGlove();
 				CondomAdpter condomadpter = new CondomAdpter();
 				condomadpter.setGlove(glove);
 				this.saftMl(condomadpter, wi);

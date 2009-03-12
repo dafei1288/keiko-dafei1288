@@ -1,8 +1,12 @@
 package net.fly78.dafei1288.util.enumt;
+
+import net.fly78.designpattern.human.Sex;
+
 public class Demo {   
 	  
     public static void main(String ...args) {// <--> String args[]   
-        MyEnum.B.method();  // output:   
+        /*
+    	MyEnum.B.method();  // output:   
                             // B:method()   
         MyEnum.A.method();   
         MyEnum.C.method("ttt");
@@ -11,7 +15,9 @@ public class Demo {
         MyEnum e = MyEnum.B;
         System.out.println(e.getV());
         
-        
+   		*/ 
+   		 System.out.println(Sex.SHEMALE);
+   		 System.out.println(Sex.FEMALE);
     }   
 };   
   

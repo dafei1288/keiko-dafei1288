@@ -24,14 +24,14 @@ public class DateOption {
 		long t1 = cal.getTimeInMillis();
 		cal.setTime(end);
 		long t2 = cal.getTimeInMillis();
-		
+		/*
 		if(t1-t2<0){
 			tag = true;
 		}else{
 			tag = false;
 		}
-		
-		return tag;
+		*/
+		return t1<t2;
 	}
 	
 	public static boolean isTheSameDate(Date start,Date end){
@@ -83,6 +83,21 @@ public class DateOption {
 		
 		return tag;
 		
+	}
+	
+	public static boolean isBetween(Date strattime,Date endtime,Date now){
+		Calendar cals = Calendar.getInstance();
+		cals.setTime(strattime);
+		long stl = cals.getTimeInMillis();
+		
+		cals.setTime(endtime);
+		long sel = cals.getTimeInMillis();
+		
+		cals.setTime(now);
+		long nowl = cals.getTimeInMillis();
+		
+		
+		return stl<=nowl && nowl<=sel;
 	}
 	
 	public static Date str2Date(String str){

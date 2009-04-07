@@ -18,6 +18,9 @@ public class CompositeIterator implements Iterator {
 	public CompositeIterator(IComposite al){
 		stack.push(al);
 	}
+	public CompositeIterator(Iterator it){
+		stack.push(it);
+	}
 	
 	public boolean hasNext() {
 		if(stack.isEmpty()){
@@ -27,6 +30,7 @@ public class CompositeIterator implements Iterator {
 			try{
 				it = (Iterator)stack.peek();
 			}catch(Exception e){
+				e.printStackTrace();
 				it = ((IComposite)stack.peek()).iterator();
 			}
 			if(!it.hasNext()){
@@ -46,10 +50,12 @@ public class CompositeIterator implements Iterator {
 				Iterator it = (Iterator)stack.peek();
 				ic = (Composite)it.next();
 			}catch(Exception e){
+				e.printStackTrace();
 				ic = (Composite)stack.peek();
 			}
-			if(ic instanceof CompositeItem){
+			if(ic instanceof Composite){
 				stack.push(ic.iterator());
+			}else{
 			}
 		}
 		return ic;

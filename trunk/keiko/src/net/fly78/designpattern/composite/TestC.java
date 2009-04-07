@@ -23,6 +23,11 @@ public class TestC {
 		IComposite ic22 = new Composite("2222_2222","2222_2222");
 		IComposite ic23 = new Composite("2222_3333","2222_3333");
 		
+		
+		IComposite ic111 = new Composite("1111_1111_1111","1111_1111_1111");
+		
+		ic11.add(ic111);
+		
 		ic1.add(ic11);
 		ic1.add(ic12);
 		
@@ -38,9 +43,8 @@ public class TestC {
 		
 		System.out.println("");
 		System.out.println("-------迭代----------");
-		CompositeIterator ci = new CompositeIterator(ic);
+		CompositeIterator ci = new CompositeIterator(ic.iterator());
 		while(ci.hasNext()){
-			
 			System.out.println((IComposite)ci.next());
 		}
 		

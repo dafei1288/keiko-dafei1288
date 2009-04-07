@@ -10,7 +10,7 @@ package net.fly78.dafei1288.util;
 import java.util.Iterator;
 
 public class NullableIterator implements Iterator {
-
+	
 	public boolean hasNext() {
 		return false;
 	}

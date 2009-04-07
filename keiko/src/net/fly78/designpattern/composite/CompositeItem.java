@@ -10,6 +10,7 @@ package net.fly78.designpattern.composite;
 import java.util.Iterator;
 
 import net.fly78.dafei1288.util.NullableIterator;
+import net.fly78.dafei1288.util.SelfableIterator;
 import net.fly78.dafei1288.util.UnsupportedException;
 
 public class CompositeItem implements IComposite {
@@ -29,7 +30,7 @@ public class CompositeItem implements IComposite {
 	}
 
 	public Iterator iterator() {
-		return new NullableIterator();
+		return new NullableIterator();//SelfableIterator(this);
 	}
 
 	public String name() {

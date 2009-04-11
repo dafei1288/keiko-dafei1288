@@ -2,15 +2,13 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry excluding="src/" kind="src" path=""/>
+	<classpathentry kind="lib" path="D:/jars/asm-3.1.jar"/>
+	<classpathentry kind="lib" path="D:/jars/unrar_bin_1.jar"/>
+	<classpathentry kind="lib" path="D:/jars/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="D:/jars/ant.jar"/>
+	<classpathentry kind="lib" path="D:/jars/quartz-1.6.4/quartz-all-1.6.4.jar"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.junit.JUNIT_CONTAINER/3"/>
-	<classpathentry kind="con" path="melibrary.com.genuitec.eclipse.j2eedt.core.MYECLIPSE_JAVAEE_5_CONTAINER"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/JavaFX"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/c3p0"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/quartz"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/qyartz"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/ant"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/URAR"/>
-	<classpathentry kind="con" path="org.eclipse.jdt.USER_LIBRARY/asm"/>
+	<classpathentry kind="lib" path="D:/jars/servlet-api.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

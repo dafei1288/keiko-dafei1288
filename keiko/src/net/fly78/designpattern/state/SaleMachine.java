@@ -79,7 +79,7 @@ public class SaleMachine {
 	}
 	
 	public String toString(){
-		return "自动售货机"+this.hashCode()+"号 | 现在还有货物 ："+this.count+"个"+this.state;
+		return "自动售货机"+this.hashCode()+"号 | 现在还有货物 ："+this.count+"个 | 货柜状态： "+this.state;
 	}
 	
 	
@@ -94,6 +94,8 @@ public class SaleMachine {
 		s.turnHandle();
 		System.out.println(s);
 		
+		s.insertMoney(10);
+		s.insertMoney(10);
 		s.insertMoney(10);
 		System.out.println(s);
 		

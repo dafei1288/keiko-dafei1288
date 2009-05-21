@@ -1,10 +1,10 @@
-package net.fly78.designpattern.human;
+package net.fly78.designpattern.ex.human;
 
 import java.util.ArrayList;
 import java.util.Observable;
 import java.util.Observer;
 
-import net.fly78.designpattern.IHuman;
+import net.fly78.designpattern.ex.IHuman;
 
 public class WomanImp extends Observable implements IHuman {
 

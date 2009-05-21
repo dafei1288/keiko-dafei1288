@@ -1,6 +1,6 @@
-package net.fly78.designpattern.human;
+package net.fly78.designpattern.ex.human;
 
-import net.fly78.designpattern.IHuman;
+import net.fly78.designpattern.ex.IHuman;
 
 public class Spoon implements LoveState {
 

@@ -15,6 +15,25 @@ public class DateOption {
 		d= new Date(t);
 		return d;
 	}
+	public static final String DATEWITHOUTTIME = "%s-%s-%s 00:00:00"; 
+	public static Date AddDayWithTime(Date base,int dayslater){
+		Date d = null;
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(base);
+		
+		//System.out.println(cal.getTimeInMillis());
+		//System.out.println(dayslater*60*24*60*1000l);
+		
+		long t = (cal.getTimeInMillis()+(dayslater*60*24*60*1000l));
+		
+		//System.out.println((cal.getTimeInMillis()+(dayslater*60*24*60*1000l)));
+		//System.out.println(t);
+		
+		d= new Date(t);
+		cal.setTime(d);
+		
+		return str2Date(String.format(DATEWITHOUTTIME, cal.get(Calendar.YEAR),(cal.get(Calendar.MONTH)+1),cal.get(Calendar.DAY_OF_MONTH)));
+	}
 	
 	
 	public static boolean isBefore(Date start,Date end){
@@ -107,6 +126,7 @@ public class DateOption {
 		try {
 			date = df.parse(str);
 		} catch (ParseException e) {
+			e.printStackTrace();
 		}
 		return date;
 	}

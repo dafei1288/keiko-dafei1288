@@ -10,9 +10,9 @@
 * @author dafei1288
 * @version 1.0 
 */ 
-package net.fly78.designpattern.safetytools;
+package net.fly78.designpattern.ex.safetytools;
 
-import net.fly78.designpattern.othertools.Glove;
+import net.fly78.designpattern.ex.othertools.Glove;
 
 /**
  * 手套改装成安全套

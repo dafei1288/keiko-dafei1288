@@ -32,7 +32,9 @@ public class Exec {
 	      while ((s = br.readLine()) != null){
 	          sb.append(s).append("\n");
 
-	     }
+	      }
+	      br.close();
+	      in.close();
 	     return sb.toString();
 	 }
 }

@@ -11,7 +11,7 @@
 * @version 1.0 
 */ 
 
-package net.fly78.designpattern.safetytools;
+package net.fly78.designpattern.ex.safetytools;
 /**
  * 安全套接口
  * */

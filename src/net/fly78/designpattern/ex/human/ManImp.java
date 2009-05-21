@@ -1,12 +1,12 @@
-package net.fly78.designpattern.human;
+package net.fly78.designpattern.ex.human;
 import java.util.Observable;
 import java.util.Observer;
 
-import net.fly78.designpattern.IHuman;
-import net.fly78.designpattern.othertools.Glove;
-import net.fly78.designpattern.othertools.PlasticGlove;
-import net.fly78.designpattern.safetytools.Condom;
-import net.fly78.designpattern.safetytools.CondomAdpter;
+import net.fly78.designpattern.ex.IHuman;
+import net.fly78.designpattern.ex.othertools.Glove;
+import net.fly78.designpattern.ex.othertools.PlasticGlove;
+import net.fly78.designpattern.ex.safetytools.Condom;
+import net.fly78.designpattern.ex.safetytools.CondomAdpter;
 public  class ManImp extends WomanImp  implements Observer  {
 	
 	private int i = 0;

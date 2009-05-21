@@ -53,6 +53,8 @@ public class RandomSpilt {
 		int res = 0;
 		if(secendNum > firstNum){
 			res = r.nextInt(secendNum-firstNum)+firstNum;
+		}else if(secendNum == firstNum){
+			res = firstNum;
 		}else{
 			res = r.nextInt(firstNum-secendNum)+secendNum;
 		}

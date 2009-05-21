@@ -10,7 +10,7 @@
 * @author dafei1288
 * @version 1.0 
 */ 
-package net.fly78.designpattern.human;
+package net.fly78.designpattern.ex.human;
 
 public enum Sex {
 	/**

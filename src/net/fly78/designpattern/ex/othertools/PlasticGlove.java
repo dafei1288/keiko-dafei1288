@@ -10,7 +10,7 @@
 * @author dafei1288
 * @version 1.0 
 */ 
-package net.fly78.designpattern.othertools;
+package net.fly78.designpattern.ex.othertools;
 /**
  * 塑料手套
  * */

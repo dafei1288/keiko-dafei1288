@@ -40,8 +40,11 @@ public class testDateop extends TestCase{
 		
 		System.out.println(DateOption.data2String(date));
 		*/
-		System.out.println(DateOption.Add(new Date(), 4*24*60));
-		System.out.println(DateOption.Add(new Date(), 4*60));
+		//System.out.println(DateOption.Add(new Date(), 4*24*60));
+		//System.out.println(DateOption.Add(new Date(), 4*60));
+		System.out.println(DateOption.AddDayWithTime(new Date(),-3));
+		System.out.println(DateOption.AddDayWithTime(new Date(),1));
+		System.out.println(DateOption.AddDayWithTime(new Date(),2));
 		;
 		
 	}

@@ -1,6 +1,6 @@
-package net.fly78.designpattern;
+package net.fly78.designpattern.ex;
 
-import net.fly78.designpattern.human.Sex;
+import net.fly78.designpattern.ex.human.Sex;
 
 /**
  * 人类接口

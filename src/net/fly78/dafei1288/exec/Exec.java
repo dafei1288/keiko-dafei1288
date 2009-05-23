@@ -35,6 +35,8 @@ public class Exec {
 	      }
 	      br.close();
 	      in.close();
+	      p.destroy();
+	      //run.freeMemory();
 	     return sb.toString();
 	 }
 }

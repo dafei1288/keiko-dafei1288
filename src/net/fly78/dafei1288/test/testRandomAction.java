@@ -14,6 +14,18 @@ import junit.framework.TestCase;
 public class testRandomAction extends TestCase {
 	public void testAction(){
 		
+		
+		
+		for(int i=0;i<1000;i++){
+			try {
+				RandomSpilt rsasdasd = new RandomSpilt("1-3","-");
+				System.out.print(rsasdasd.getNext());
+			
+			} catch (FormatRandomSpiltException e1) {
+				e1.printStackTrace();
+			} 
+			
+		}
 		Integer ati = new Integer("1");
 		System.out.println(ati+11);
 		

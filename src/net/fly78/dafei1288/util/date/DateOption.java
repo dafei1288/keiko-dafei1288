@@ -15,6 +15,17 @@ public class DateOption {
 		d= new Date(t);
 		return d;
 	}
+	
+	
+	public static Date addSecs(Date base,int seclater){
+		Date d = null;
+		Calendar cal = Calendar.getInstance();
+		cal.setTime(base);
+		long t = cal.getTimeInMillis()+(seclater*1000l);
+		d= new Date(t);
+		return d;
+	}
+	
 	public static final String DATEWITHOUTTIME = "%s-%s-%s 00:00:00"; 
 	public static Date AddDayWithTime(Date base,int dayslater){
 		Date d = null;

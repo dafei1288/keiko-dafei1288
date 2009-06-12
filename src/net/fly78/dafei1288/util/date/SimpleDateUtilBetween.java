@@ -108,11 +108,26 @@ public class SimpleDateUtilBetween {
 		return _dateutil;	
 	}	
 	/**
-	 * 得到两个日期间所有天数
+	 * 得到两个日期间所有天数 24小时制度
 	 * */
 	public int getAllDays(){
 		return (int)(this.between()/SimpleDateUtilBetween.DateTimeUtil.DAY);		
 	}
+	
+	/**
+	 * 得到两个日期之间所有的真实天数
+	 * */
+	public int getRealAllDays(){
+		int ald = this.getAllDays();
+		
+		if(this.beginc.get(Calendar.HOUR_OF_DAY)>this.endc.get(Calendar.HOUR_OF_DAY)){
+			ald++;
+		}
+		
+		return ald;//this.getBeginc().get(Calendar.DAY_OF_YEAR)-this.getEndc().get(Calendar.DAY_OF_YEAR);
+	}
+	
+	
 	/**
 	 * 得到两个日期间所有小时数
 	 * */

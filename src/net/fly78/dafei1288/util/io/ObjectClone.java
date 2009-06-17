@@ -18,21 +18,23 @@ import java.io.ObjectOutputStream;
 public class ObjectClone implements java.io.Serializable{
 	public synchronized static Object CloneObject(Object o) throws FileNotFoundException,IOException, ClassNotFoundException{
 		Object res =null;
-		String tempf = Math.random()+"t.tmp";
-		FileOutputStream fos = new FileOutputStream(tempf);
+		StringBuilder tempf = new StringBuilder();
+		tempf.append(System.currentTimeMillis()).append(Math.random()).append("t.tmp");
+		FileOutputStream fos = new FileOutputStream(tempf.toString());
 		ObjectOutputStream oos = new ObjectOutputStream(fos);
 	    oos.writeObject(o);
 	    oos.close();
 	    fos.close();
 
-	    FileInputStream fis = new FileInputStream(tempf);
+	    FileInputStream fis = new FileInputStream(tempf.toString());
 	    ObjectInputStream ois = new ObjectInputStream(fis);
         res = ois.readObject();
         ois.close();
         fis.close();
         
-        File f = new File(tempf);
+        File f = new File(tempf.toString());
         f.delete();
+        f=null;
 		return res;
 	}
 	

@@ -122,12 +122,31 @@ public class SimpleDateUtilBetween {
 	
 	@Deprecated
 	public int getRealAllDays(){
-		int ald = this.getAllDays();
 		
-		if(this.beginc.get(Calendar.HOUR_OF_DAY)>this.endc.get(Calendar.HOUR_OF_DAY) || this.beginc.get(Calendar.DAY_OF_YEAR)!=this.endc.get(Calendar.DAY_OF_YEAR)){
-			ald++;
+		if(DateOption.isTheSameDate(this.begin, this.end)){
+			return 0;
 		}
-		
+		int ald = this.getAllDays();
+		SimpleDateFormat df = new SimpleDateFormat("HH:mm:ss");
+		Date db = null;
+		Date de = null;
+		try {
+			db = df.parse(this.beginc.get(Calendar.HOUR_OF_DAY)+":"+this.beginc.get(Calendar.MINUTE)+":"+this.beginc.get(Calendar.SECOND));
+			de = df.parse(this.endc.get(Calendar.HOUR_OF_DAY)+":"+this.endc.get(Calendar.MINUTE)+":"+this.endc.get(Calendar.SECOND));
+			
+		} catch (ParseException e) {
+			e.printStackTrace();
+		}
+		if(this.begin.before(this.end)){
+			if(!db.before(de)){
+				ald++;
+			}
+			
+		}else{
+			if(db.before(de)){
+				ald--;
+			}
+		}
 		return ald;//this.getBeginc().get(Calendar.DAY_OF_YEAR)-this.getEndc().get(Calendar.DAY_OF_YEAR);
 	}
 	

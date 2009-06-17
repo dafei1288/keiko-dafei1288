@@ -116,11 +116,15 @@ public class SimpleDateUtilBetween {
 	
 	/**
 	 * 得到两个日期之间所有的真实天数
+	 * 
+	 * 如果开始时间 大于 结束时间 结果可能有误差
 	 * */
+	
+	@Deprecated
 	public int getRealAllDays(){
 		int ald = this.getAllDays();
 		
-		if(this.beginc.get(Calendar.HOUR_OF_DAY)>this.endc.get(Calendar.HOUR_OF_DAY)){
+		if(this.beginc.get(Calendar.HOUR_OF_DAY)>this.endc.get(Calendar.HOUR_OF_DAY) || this.beginc.get(Calendar.DAY_OF_YEAR)!=this.endc.get(Calendar.DAY_OF_YEAR)){
 			ald++;
 		}
 		

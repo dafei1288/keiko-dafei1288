@@ -3,18 +3,18 @@
 	<classpathentry kind="src" path="src"/>
 	<classpathentry excluding="src/" kind="src" path=""/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/c3p0-0.9.1.2.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/unrar_bin_1.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/servlet-api-2.4.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/quartz-all-1.6.4.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/luajava-1.1.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/log4j-1.2.12.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/junit-3.8.1.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/commons-logging.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/ant.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/servlet-api.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/mysql-connector-java-5.1.6-bin.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/dafei1288.jar"/>
-	<classpathentry kind="lib" path="D:/openkit/myeclipse6.5work/keiko/lib/asm-all-3.1.jar"/>
+	<classpathentry kind="lib" path="lib/c3p0-0.9.1.2.jar"/>
+	<classpathentry kind="lib" path="lib/unrar_bin_1.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/quartz-all-1.6.4.jar"/>
+	<classpathentry kind="lib" path="lib/luajava-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/log4j-1.2.12.jar"/>
+	<classpathentry kind="lib" path="lib/junit-3.8.1.jar"/>
+	<classpathentry kind="lib" path="lib/commons-logging.jar"/>
+	<classpathentry kind="lib" path="lib/ant.jar"/>
+	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/mysql-connector-java-5.1.6-bin.jar"/>
+	<classpathentry kind="lib" path="lib/dafei1288.jar"/>
+	<classpathentry kind="lib" path="lib/asm-all-3.1.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

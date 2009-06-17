@@ -10,22 +10,36 @@ public class testDateUtilBetween extends TestCase {
 	public void testDate() throws ParseException{
 		try{
 			DateFormat sdf =SimpleDateFormat.getDateTimeInstance();
-			Date begin =sdf.parse("1999-8-17 11:22:33");
-			Date end = sdf.parse("1999-8-17 11:22:32");
+			Date begin =sdf.parse("1999-8-17 1:22:33");
+			Date end = sdf.parse("1999-8-17 23:22:32");
 			DateUtilBetween dub = 	DateUtilBetween.getInstance(begin, end);
 			SimpleDateUtilBetween sd = SimpleDateUtilBetween.getInstance(begin, end);
 			System.out.println("**********1");
-			System.out.println(sd.getRealAllDays());
+			System.out.println("这个应该是0....--->"+sd.getRealAllDays());
+			
+			this.assertEquals(0, sd.getRealAllDays());
+			
 			System.out.println("**********2");
 			begin =sdf.parse("1999-12-31 00:22:33");
-			end = sdf.parse("2000-1-1 11:22:32");
+			end = sdf.parse("2000-1-1 00:22:32");
 			sd = SimpleDateUtilBetween.getInstance(begin, end);
-			System.out.println(sd.getRealAllDays());	
+			
+			
+			System.out.println(sd.getBeginc().get(Calendar.DAY_OF_YEAR));
+			System.out.println(sd.getEndc().get(Calendar.DAY_OF_YEAR));
+			System.out.println(sd.getRealAllDays());
+			
+			this.assertEquals(1, sd.getRealAllDays());
+			
+			
 			System.out.println("**********3");
 			begin =sdf.parse("1999-12-31 11:22:33");
 			end = sdf.parse("2000-2-1 11:22:32");
 			sd = SimpleDateUtilBetween.getInstance(begin, end);
-			System.out.println(sd.getRealAllDays());	
+			System.out.println(sd.getRealAllDays());
+			this.assertEquals(32, sd.getRealAllDays());
+			
+			
 			System.out.println("**********4");
 			
 			begin =sdf.parse("1999-11-30 23:22:33");

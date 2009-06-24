@@ -1,24 +1,38 @@
 package net.fly78.dafei1288.util.math.algorithm;
 
+import java.math.BigInteger;
+
+import org.apache.log4j.Logger;
+
 public class Algorithm {
+	private static Logger log = Logger.getLogger(Algorithm.class);
 	public static long GCD(long x,long y){
 		long remainder = 0l;
 		int setp = 0;
 		
-		System.out.println("#######begin######## ");
-		System.out.println( "x = "+x+" y = "+y);
-		System.out.println();
+		log.debug("#######begin######## ");
+		log.debug( "x = "+x+" y = "+y);
+		log.debug("");
+		
 		while(y!=0){
-			System.out.println("setp ["+ setp++ +"]:  x = "+x+" y = "+y);
+			log.debug("setp ["+ setp++ +"]:  x = "+x+" y = "+y);
+		
 			remainder = x%y;
-			System.out.println("	===>remainder = "+remainder);
+			
+			log.debug("	===>remainder =( x % y ) = "+remainder);
+			
 			x=y;
-			System.out.println("	===>   x = "+x);
+			
+			log.debug("	===>   x = y = "+x);
+			
 			y=remainder;
-			System.out.println("	===>   y = "+y);
+			
+			log.debug("	===>   y = remainder = "+y);
 		}
-		System.out.println();
-		System.out.println("#######end######## ");
+		
+		log.debug("");
+		log.debug("#######end######## ");
+		
 		return x;
 	}
 	
@@ -26,13 +40,42 @@ public class Algorithm {
 		   long x=0, y=1,
 		   		u=1, v=0,
 		   		a=N, b=D;
+		  
+		   log.debug("#######begin######## ");
+		   log.debug( "x = "+x+" y = "+y);
+		   log.debug( "u = "+u+" v = "+v);
+		   log.debug( "a = "+a+" b = "+b);
+		   log.debug("");
+		   
+		   int setp = 0;
 		   while (0 != a){
-		       long q = (long)(b/a);
-		       long r = b%a;
-		       long m = x - u*q;
-		       long n = y - v*q;
-		       b=a; a=r; x=u; y=v; u=m; v=n;
+			   
+			   log.debug("setp ["+ setp++ +"]:  x = "+x+" y = "+y+" u = "+u+" v = "+v+"a = "+a+" b = "+b);
+		       
+			   long q = (long)(b/a);
+		       
+			   log.debug(" ===> q = (b/a) = "+q);
+		       
+			   long r = b%a;
+		       
+			   log.debug(" ===> r = (b%a)  = "+r);
+		       
+			   long m = x - u*q;
+		       
+			   log.debug(" ===> m = (x - u*q) = "+m);
+		       
+			   long n = y - v*q;
+		       
+			   log.debug(" ===> n = ( y - v*q) = "+n);
+		       
+			   b=a; a=r; x=u; y=v; u=m; v=n;
+		       
+			   log.debug(" b=a; a=r; x=u; y=v; u=m; v=n ;");
+			   log.debug(" ===> x = "+x+" y = "+y+" b = "+b);
 		   }
+		   log.debug("");
+		   log.debug("#######end######## ");
+
 		   long[] ret = {x, y, b};
 		   return ret;
 	}
@@ -42,6 +85,27 @@ public class Algorithm {
 		   if( ret[2] == 1) 
 			   return ((ret[0]+D)%D);
 		   else
-			   return -9999;
+			   throw new NoneInvMODException();
+	}
+	
+	
+	public static class NoneInvMODException extends RuntimeException{
+		public  static final String ERRORMESSAGE = "none InvMOD for the params...";
+		public NoneInvMODException() {
+			super(ERRORMESSAGE);
+		}
+
+		public NoneInvMODException(String arg0, Throwable arg1) {
+			super(ERRORMESSAGE, arg1);
+		}
+
+		public NoneInvMODException(String arg0) {
+			super(arg0);
+		}
+
+		public NoneInvMODException(Throwable arg0) {
+			super(arg0);
+		}
+		
 	}
 }

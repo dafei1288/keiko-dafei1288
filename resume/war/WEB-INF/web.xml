@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE web-app
+    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
+    "http://java.sun.com/dtd/web-app_2_3.dtd">
+
+
+<web-app>
+  <!-- Default page to serve -->
+  <welcome-file-list>
+    <welcome-file>resume.htm</welcome-file>
+  </welcome-file-list>
+  <!-- Servlets -->
+  <servlet>
+    <servlet-name>greetServlet</servlet-name>
+    <servlet-class>net.fly78.server.GreetingServiceImpl</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>greetServlet</servlet-name>
+    <url-pattern>/testgae2/greet</url-pattern>
+  </servlet-mapping>
+  <servlet>
+		<servlet-name>Quercus Servlet</servlet-name>
+		<servlet-class>com.caucho.quercus.servlet.QuercusServlet</servlet-class>
+		<init-param>
+			<param-name>ini-file</param-name>
+			<param-value>WEB-INF/php.ini</param-value>
+			<param-name>compile</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Quercus Servlet</servlet-name>
+		<url-pattern>*.php</url-pattern>
+	</servlet-mapping>
+  
+  
+</web-app>
+<!--  
+	  	<servlet>
+		<servlet-name>Quercus Servlet</servlet-name>
+		<servlet-class>com.caucho.quercus.servlet.QuercusServlet</servlet-class>
+		<init-param>
+			<param-name>ini-file</param-name>
+			<param-value>WEB-INF/php.ini</param-value>
+			<param-name>compile</param-name>
+			<param-value>true</param-value>
+		</init-param>
+	</servlet>
+
+	<servlet-mapping>
+		<servlet-name>Quercus Servlet</servlet-name>
+		<url-pattern>*.php</url-pattern>
+	</servlet-mapping>
+		<servlet>
+		<servlet-name>phpwithjava</servlet-name>
+		<servlet-class>de.apux.ajaxialis.ajaxialisServlet</servlet-class>
+	</servlet>
+	<servlet-mapping>
+		<servlet-name>phpwithjava</servlet-name>
+		<url-pattern>/phpwithjava</url-pattern>
+	</servlet-mapping>
+	-->

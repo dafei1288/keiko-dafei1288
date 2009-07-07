@@ -32,8 +32,31 @@ public class Caesar {
 		}
 		System.out.println("PlainText: " + PlainText);
 	}
-
+	public static void cipherTable(int Offset,String password){
+		
+		System.out.print("PlainText:");
+		for (int i=0;i<=255;i++){
+			System.out.print((char)i);
+		}
+		
+		System.out.println();
+		System.out.print("CipherText:");
+		String CipherText = "";
+		for (int i=0;i<=255;i++){
+			if ((char)i >= 'a' && (char)i <= 'z')
+				CipherText += (char) ('a' + (((char)i - 'a' + Offset) % 26));
+			else if ((char)i >= 'A' && (char)i <= 'Z')
+				CipherText += (char) ('A' + (((char)i - 'A' + Offset) % 26));
+			else if ((char)i >= '0' && (char)i <= '9')
+				CipherText += (char) ('0' + (((char)i - '0' + Offset) % 10));
+			else 
+				CipherText += (char)i;
+		}
+		System.out.print(CipherText);
+	}
 	public static void main(String[] args) {
+		
+		Caesar.cipherTable(3,"");
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					System.in));

@@ -56,7 +56,7 @@ public class Caesar {
 	}
 	public static void main(String[] args) {
 		
-		Caesar.cipherTable(3,"");
+		//Caesar.cipherTable(3,"");
 		try {
 			BufferedReader br = new BufferedReader(new InputStreamReader(
 					System.in));

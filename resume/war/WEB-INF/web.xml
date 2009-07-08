@@ -34,6 +34,15 @@
 		<url-pattern>*.php</url-pattern>
 	</servlet-mapping>
   
+   <servlet>
+        <servlet-name>crosswall</servlet-name>
+        <servlet-class>net.fly78.CrossWall</servlet-class>
+    </servlet>
+    <servlet-mapping>
+        <servlet-name>crosswall</servlet-name>
+        <url-pattern>/crosswall</url-pattern>
+    </servlet-mapping>
+  
   
 </web-app>
 <!--  

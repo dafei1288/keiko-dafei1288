@@ -18,11 +18,24 @@ import java.util.*;
 public class EnvironmentConfig {
 	static EnvironmentConfig ec;// 创建对象ec   
 	private static Hashtable<String, Properties> register = new Hashtable<String, Properties>();// 静态对象初始化[在其它对象之前]   
+	private String fileName = "dafei1288.config.properties";
+	public String getFileName() {
+		return fileName;
+	}
+
+	public void setFileName(String fileName) {
+		this.fileName = fileName;
+	}
 
 	private EnvironmentConfig() {
 		super();
 	}
-
+	
+	
+	public EnvironmentConfig(String fileName){
+		this.fileName = fileName;
+	}
+	
 	/**  
 	 * 取得EnvironmentConfig的一个实例  
 	 */
@@ -32,6 +45,14 @@ public class EnvironmentConfig {
 		return ec;// 返回EnvironmentConfig对象   
 	}
 
+	/**  
+	 * 取得EnvironmentConfig的一个实例  
+	 */
+	public static EnvironmentConfig getInstance(String fileName) {
+		ec = EnvironmentConfig.getInstance();
+		ec.setFileName(fileName);
+		return ec;// 返回EnvironmentConfig对象   
+	}
 	/**  
 	 * 读取配置文件  
 	 */
@@ -65,7 +86,17 @@ public class EnvironmentConfig {
 		}
 		return p;// 返回Properties对象   
 	}
-
+	
+	
+	/**  
+	 * 此处插入方法描述。  
+	 */
+	public String getPropertyValue(String strKey) {
+		return this.getPropertyValue(this.fileName, strKey);
+	}
+	
+	
+	
 	/**  
 	 * 此处插入方法描述。  
 	 */
@@ -80,7 +111,8 @@ public class EnvironmentConfig {
 	}
 	public static void main(String[] args){
 		EnvironmentConfig ec=EnvironmentConfig.getInstance();   
-		String driverClassName=ec.getPropertyValue("log4j.properties", "log4j.appender.A1");  
+		String driverClassName=ec.getPropertyValue("log4j.appender.A1");  
 		System.out.println(driverClassName);
+		System.out.println("--------------");
 	}
 }

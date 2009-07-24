@@ -11,8 +11,9 @@
   
   <body>
 	<form action="/crosswall" method="POST">
+	input the adress:=>
 		<input name="path" type="text" />
-		<input type="submit" value="submit" />
+		<input type="submit" value="then click me" />
 	</form>
 
   </body>

@@ -74,10 +74,7 @@ public class CrossWall extends HttpServlet {
 	public void doPost(HttpServletRequest req, HttpServletResponse resp)
 			throws IOException {
 		PrintWriter out = resp.getWriter();
-		out.write(req.getParameter("path"));
-		out.write("dafei1288<br />dddd<br />");
-
-		// ...
+		out.write("dafei's simple example! :)  u want to cross to => "+req.getParameter("path")+"<br />");
 		try {
 			URL url = new URL(req.getParameter("path"));
 			BufferedReader reader = new BufferedReader(new InputStreamReader(
@@ -87,7 +84,7 @@ public class CrossWall extends HttpServlet {
 			while ((line = reader.readLine()) != null) {
 				sb.append(line);
 			}
-			out.write(line==null?"没信息":line);
+			out.write(line==null?"no message":line);
 			out.write(sb.toString());
 			reader.close();
 		} catch (MalformedURLException e) {
@@ -96,6 +93,9 @@ public class CrossWall extends HttpServlet {
 			e.printStackTrace(out);
 		}catch(Throwable e){
 			e.printStackTrace(out);
+		}finally{
+			out.flush();
+			out.close();
 		}
 	}
 

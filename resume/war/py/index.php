@@ -55,7 +55,18 @@ var sc_security="472e6e0d";
 var sc_invisible=1; 
 //-->
 </SCRIPT>
-<a href="http://ljq1288.appspot.com/">harck by: Christian 'defei' Lee  李佳麒 </a>
-<a href="http://ajaxime.chasen.org/">Ajax IME: Web-based Japanese Input Method
-</a>
+<br />
+<h1>注意：</h1>
+<hr />
+<ol>
+	<li>这只是一个测试环境功能并不完善</li>
+	<li>目前没有条件在纯无中文法环境下测试</li>
+	<li>算法不够优化，初次页面加载量过大</li>
+</ol>
+<br />
+<ul>
+<li><a href="http://ljq1288.appspot.com/">harck by: Christian 'defei' Lee  李佳麒 </a></li>
+<li><a href="http://ajaxime.chasen.org/">Ajax IME: Web-based Japanese Input Method</a></li>
+</ul>
+
 </BODY></HTML>

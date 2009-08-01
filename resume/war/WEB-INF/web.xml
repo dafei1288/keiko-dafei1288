@@ -7,7 +7,7 @@
 <web-app>
   <!-- Default page to serve -->
   <welcome-file-list>
-    <welcome-file>resume.htm</welcome-file>
+    <welcome-file>index.jsp</welcome-file>
   </welcome-file-list>
   <!-- Servlets -->
   <servlet>
@@ -42,7 +42,23 @@
         <servlet-name>crosswall</servlet-name>
         <url-pattern>/crosswall</url-pattern>
     </servlet-mapping>
+    <servlet>
+    <servlet-name>JdoGoogle</servlet-name>
+    <servlet-class>net.fly78.domain.JdoGoogle</servlet-class>
+  </servlet>
+ <servlet-mapping>
+    <servlet-name>JdoGoogle</servlet-name>
+    <url-pattern>/jdogoogle</url-pattern>
+  </servlet-mapping>
   
+   <servlet>
+    <servlet-name>Resume</servlet-name>
+    <servlet-class>net.fly78.Resume</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>Resume</servlet-name>
+    <url-pattern>/resume</url-pattern>
+  </servlet-mapping>
   
 </web-app>
 <!--  
@@ -65,8 +81,12 @@
 		<servlet-name>phpwithjava</servlet-name>
 		<servlet-class>de.apux.ajaxialis.ajaxialisServlet</servlet-class>
 	</servlet>
+ 
+
 	<servlet-mapping>
 		<servlet-name>phpwithjava</servlet-name>
 		<url-pattern>/phpwithjava</url-pattern>
 	</servlet-mapping>
+
+ 
 	-->

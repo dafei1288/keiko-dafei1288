@@ -1,0 +1,32 @@
+.zpResumeS {
+	CLEAR: both; BORDER-RIGHT: #d6d3ce 1px solid; BORDER-TOP: #d6d3ce 1px solid; MARGIN: 0px auto; BORDER-LEFT: #d6d3ce 1px solid; WIDTH: 80%; BORDER-BOTTOM: #d6d3ce 1px solid
+}
+.zpResumeS .box {
+	CLEAR: both; MARGIN: 15px 10px
+}
+.zpResumeS .greyLine {
+	CLEAR: both; BORDER-TOP: #d6d3ce 2px solid
+}
+.zpResumeS .name {
+	FONT-WEIGHT: bold; FONT-SIZE: 40px; FLOAT: left; COLOR: #000000; TEXT-ALIGN: center
+}
+.zpResumeS .baseinfo {
+	FONT-WEIGHT: normal; FONT-SIZE: 12px; FLOAT: right; COLOR: #000000; LINE-HEIGHT: 150%; TEXT-ALIGN: right
+}
+.zpResumeS .photo {
+	FLOAT: right;
+	MARGIN: 5px 5px 5px 8px;
+	background-image: url(../head.jpg);
+}
+.zpResumeS .itemTitle {
+	CLEAR: both; PADDING-LEFT: 38px; BACKGROUND: url(../images/resumetitleleft.gif) no-repeat left top; OVERFLOW: hidden; WIDTH: 575px; LINE-HEIGHT: 26px; TEXT-ALIGN: left
+}
+.zpResumeS .itemTitle .right {
+	PADDING-RIGHT: 229px; BACKGROUND: url(../images/resumetitleright.gif) no-repeat right top; FLOAT: left
+}
+.zpResumeS .itemTitle .center {
+	PADDING-RIGHT: 3px; PADDING-LEFT: 5px; FONT-SIZE: 14px; BACKGROUND: url(../images/resumetitlecenter.gif) repeat-x; FLOAT: left; PADDING-BOTTOM: 0px; COLOR: #8866ff; PADDING-TOP: 0px
+}
+.zpResumeS .itemCon {
+	PADDING-RIGHT: 10px; PADDING-LEFT: 10px; FONT-SIZE: 10px; PADDING-BOTTOM: 18px; COLOR: #000000; LINE-HEIGHT: 150%; PADDING-TOP: 18px; TEXT-ALIGN: left
+}

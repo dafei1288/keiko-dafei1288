@@ -82,7 +82,7 @@
     <em><strong>李佳麒(Jack Li) </strong></em> Jack Li是一名代码民工，走在JAVA的路上，迷恋编码和设计模式
 	</p>
 	
-	 <p><em><strong>曾用名：大飞,dafei1288</strong></em></p>
+	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>],[<a href="http://user.qzone.qq.com/78338591">QQ Zone</a>]</p>
     
     <div class="box">
     	<strong>Community List:</strong>

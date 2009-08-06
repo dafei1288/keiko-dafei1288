@@ -361,7 +361,7 @@ span {
 				</a>
 				<a href="http://appengine.google.com/">
     <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
-alt="由 Google App Engine 提供空间" /></a>
+alt="space supports by Google App Engine" /></a>
 		
 			</p>
 		</div>

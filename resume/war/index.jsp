@@ -14,9 +14,9 @@
    <meta http-equiv="description" content="李佳麒的简历">
   <meta http-equiv="content-type" content="text/html; charset=UTF-8">
   <!-- Framework CSS -->
-  <link rel="stylesheet" href="css/screen.css" type="text/css" media="screen, projection">
-  <link rel="stylesheet" href="css/print.css" type="text/css" media="print">
-  <!--[if lt IE 8]><link rel="stylesheet" href="../blueprint/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <link rel="stylesheet" href="./css/screen.css" type="text/css" media="screen, projection">
+  <link rel="stylesheet" href="./css/print.css" type="text/css" media="print">
+  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 	<style type="text/css" media="screen">
 		p, table, hr, .box { margin-bottom:25px; }
 		.box p { margin-bottom:10px; }
@@ -76,6 +76,14 @@
 		</td>
         <td>&nbsp;</td>
       </tr>
+      
+       <tr  class="even">
+        <td><a href="/crosswall.php">翻墙</a></td>
+		<td>
+			墙外的世界应该很精彩
+		</td>
+        <td>&nbsp;</td>
+      </tr>
     </table>
     
     <p>
@@ -111,7 +119,13 @@
 	<br>
 	<hr />
     <p><a href="http://validator.w3.org/check?uri=referer">
-    <img src="images/valid.png" alt="Valid HTML 4.01 Strict" height="31" width="88" class="top"></a></p>
+    <img src="images/valid.png" alt="Valid HTML 4.01 Strict" height="31" width="88" class="top"></a>
+    
+    <a href="http://appengine.google.com/">
+    <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
+alt="由 Google App Engine 提供空间" /></a>
+    
+    </p>
     
   </div>
 </body>

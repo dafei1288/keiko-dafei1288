@@ -344,7 +344,7 @@ span {
 					<li><a href="info.php" title="about this space information">space infomation</a></li>
 					<li><a href="TestGae2.html" title="Helloworld, GWT!">test GWT</a></li>
 					<li><a href="crosswall.php"
-						title="dafei's simple example ,which is crosswall to the forbidden webside">翻墙</a></li>
+						title="dafei's simple example ,which is crosswall to the forbidden webside">crosswall</a></li>
 					<li><a href="py/index.php"
 					title="if ur OS can't type Chinese,try this URL"><b>to
 						Daniel the online input method</b></a></li>
@@ -358,23 +358,15 @@ span {
 			<hr>
 			<p class="box">
 			
-				<a href="http://appengine.google.com/">感谢 GAE 提供空间..</a>
-				&nbsp;&nbsp;&nbsp;|
-				<a href="info.php" title="about this space information">空间信息</a>&nbsp;&nbsp;&nbsp;|
-				<a href="TestGae2.html" title="Helloworld, GWT!">测试</a>&nbsp;&nbsp;&nbsp;&nbsp;|
-				<a href="crosswall.php"
-					title="dafei's simple example ,which is crosswall to the forbidden webside">翻墙</a>
-				&nbsp;&nbsp;&nbsp;&nbsp;|
-				<a href="py/index.php"
-					title="if ur OS can't type Chinese,try this URL"><b>to
-						Daniel the online input method</b>
-				</a> &nbsp;&nbsp;&nbsp;&nbsp;
+				
 
 				<a href="http://validator.w3.org/check?uri=referer"><img
 						src="./images/valid.png" alt="Valid HTML 4.01 Strict" height="31"
 						width="88" class="top ">
 				</a>
-		
+				<a href="http://appengine.google.com/">
+					 <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
+				alt="由 Google App Engine 提供空间" /></a>
 			</p>
 		</div>
 

@@ -335,7 +335,9 @@ span {
 					Links
 				</h3>
 				<ul>
+					
 					<li><a href="http://appengine.google.com/">thanks GAE</a></li>
+					
 					<li><a href="info.php" title="about this space information">space infomation</a></li>
 					<li><a href="TestGae2.html" title="Helloworld, GWT!">test GWT</a></li>
 					<li><a href="crosswall.php"
@@ -357,6 +359,9 @@ span {
 						src="./images/valid.png" alt="Valid HTML 4.01 Strict" height="31"
 						width="88" class="top ">
 				</a>
+				<a href="http://appengine.google.com/">
+    <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
+alt="由 Google App Engine 提供空间" /></a>
 		
 			</p>
 		</div>

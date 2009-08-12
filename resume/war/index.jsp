@@ -16,19 +16,38 @@
   <!-- Framework CSS -->
   <link rel="stylesheet" href="./css/screen.css" type="text/css" media="screen, projection">
   <link rel="stylesheet" href="./css/print.css" type="text/css" media="print">
-  <!--[if lt IE 8]><link rel="stylesheet" href="css/ie.css" type="text/css" media="screen, projection"><![endif]-->
+  <link rel="stylesheet" href="./css/thickbox.css" type="text/css" media="screen">
+  <link rel="stylesheet" type="text/css" href="./turn/turn.css">
+  <!--[if lt IE 8]><link rel="stylesheet" href="./css/ie.css" type="text/css" media="screen, projection"><![endif]-->
 	<style type="text/css" media="screen">
 		p, table, hr, .box { margin-bottom:25px; }
 		.box p { margin-bottom:10px; }
+		.horizontal li{ float:left }
 	</style>
+	<script type="text/javascript" src="http://www.google.com/jsapi"></script>
+	<script type="text/javascript">
+		google.load("jquery","1.3.2");
+		google.load("jqueryui","1.7.2");
+	</script>
+	<script type="text/javascript" src="./js/thickbox.js"></script>
+	<script type="text/javascript" src="./turn/turn.js"></script>
+  	<script type="text/javascript"> 
+		  $(document).ready(function(){
+            tb_init("#join2list");
+		    $( '#code' ).fold();
+		  });
+		  
+	</script>
 </head>
 <body style="margin: 15px 5px 5px 5px;">
-
+  <div><img id="code" src="./turn/code.png" alt="code" style="z-index:10000">
+</div>
   <div class="container">  
+
     <h1>麒幻空间</h1>
     <hr>
     
-    <p>这里存放了一些常用工具，小项目 和 一些合作的小项目</p>
+    <p>这里存放了一些常用工具 和 一些合作的小项目</p>
   
     <table border="0" cellspacing="0" cellpadding="0">
       <tr>
@@ -90,44 +109,47 @@
     <em><strong>李佳麒(Jack Li) </strong></em> Jack Li是一名代码民工，走在JAVA的路上，迷恋编码和设计模式
 	</p>
 	
-	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>],[<a href="http://user.qzone.qq.com/78338591">QQ Zone</a>]</p>
+	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>],[<a href="http://user.qzone.qq.com/78338591?ptlang=2052">QQ Zone</a>]</p>
+    
+    
+    <div class="box">
+    	<strong>Friend List:</strong><a id="join2list" class="thickbox" href="reg.htm?height=530&amp;width=580&amp;modal=true" title="join into">(Click to join into the list)</a><br>
+		<ul class="horizontal" >
+			<li class="span-5"><a href="http://32813711.qzone.qq.com">盒子</a></li>
+			<li class="span-5"><a href="http://154610035.qzone.qq.com">鸟人</a></li>
+			<li class="span-5"><a href="http://82094798.qzone.qq.com">芊芊</a></li>
+		</ul>
+    </div>
     
     <div class="box">
     	<strong>Community List:</strong>
-      	<table border="0" cellspacing="0" cellpadding="0">
-		      <tr>
-		        <td class="span-6">
-		        	 <ul>
-				        <li><a href="http://www.infoq.com">infoq</a></li>
-				        <li><a href="http://www.theserverside.com">theserverside</a></li>
-				        <li><a href="http://www.ibm.com/developerworks">IBM developerworks</a></li>
-				        <li><a href="http://www.javaeye.com">javaeye</a></li>
-				        <li><a href="http://www.apache.org">apache</a></li>
-				        <li><a href="http://www.java.net">java.net</a></li>
-				        <li><a href="http://www.javaworld.com">javaworld</a></li>
-					  </ul>
-		        </td>
-		        <td class="span-6">
-		        	  <ul>
-				         <li><a href="http://kenai.com">kenai</a></li>
-				         <li><a href="http://www.blogjava.net">blogjava</a></li>
-				      </ul>
-		        </td>
-		      </tr>
-    	</table>     
+		<ul class="horizontal" >
+			     <li class="span-6"><a href="http://www.infoq.com">Infoq</a></li>
+			     <li class="span-6"><a href="http://www.theserverside.com">The Server Side</a></li>
+			     <li class="span-6"><a href="http://www.ibm.com/developerworks">IBM Developerworks</a></li>
+			     <li class="span-6"><a href="http://developers.sun.com/">SUN Developers</a></li>
+			     <li class="span-6"><a href="http://www.javaeye.com">Javaeye</a></li>
+			     <li class="span-6"><a href="http://www.blogjava.net">Blogjava</a></li>
+			     <li class="span-6"><a href="http://www.java.net">java.net</a></li>
+			     <li class="span-6"><a href="http://www.javaworld.com">Java World</a></li>
+			     <li class="span-6"><a href="http://kenai.com">Kenai</a></li>
+			     <li class="span-6"><a href="http://www.apache.org">Apache</a></li>
+				 <li class="span-6"><a href="http://code.google.com">Google Code</a></li>
+		</ul>
     </div>
 	<br>
-	<hr />
+	<hr>
     <p><a href="http://validator.w3.org/check?uri=referer">
     <img src="images/valid.png" alt="Valid HTML 4.01 Strict" height="31" width="88" class="top"></a>
     
     <a href="http://appengine.google.com/">
     <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
-alt="由 Google App Engine 提供空间" /></a>
+alt="由 Google App Engine 提供空间"></a>
     
     </p>
     
   </div>
+  
 </body>
 </html>
 

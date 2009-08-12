@@ -184,7 +184,7 @@ span {
 						<br >
 						Responsibility described ：Team leader
 						<br >
-						Project characteristics：award the third of xiaonei.com app game 
+						Project characteristics：award the third of xiaonei.com app game , <strong>PV more than 1,000,000</strong> , <strong>Online more than 10,000</strong>
 					</p>
 					<br >
 					<p>
@@ -200,7 +200,7 @@ span {
 					</p>
 					<br >
 					<p>
-						2009/03 -- 今 code.google.com & kenai.com hosted projects 'keiko-dafei1288'
+						2009/03 -- Now code.google.com & kenai.com hosted projects 'keiko-dafei1288'
 						<br>
 						Project describe： an useful java tool kit
 					</p>

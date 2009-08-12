@@ -1,0 +1,103 @@
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+<script type="text/javascript">
+	google.load("jqueryui", "1.7.2");
+</script>
+<script type="text/javascript">
+	$(document).ready(function() {
+		//$("#birthday").datepicker();
+		$('#reguser').click(function() {
+			$('#ue').html('');
+			$('#repe').html('');
+			if($('#username').val()==""){
+				$('#ue').html("用户名不能为空!");
+				return;
+			}
+
+			if($('#password').val()!=$('#repassword').val()){
+				$('#repe').html("两次密码不一致!");
+				return;
+			}
+
+			if($('#password').val()==$('#repassword').val() && $('#password').val()==""){
+				$('#repe').html("密码不能为空!");
+				return;
+			}
+		    $.ajax({
+		    	    url: '/jdogoogle',
+		    	    type: 'POST',
+		    	    dataType: 'text',
+		    	    timeout: 20000,
+		    	    data: ({
+			    	    action:'insert',
+		    	    	username:$('#username').val(),
+		    	    	password:$('#password').val(),
+		    	    	email:$('#email').val(),
+		    	    	im:$('#im').val(),
+		    	    	birthday:$('#birthday').val(),
+		    	    	url:$('#url').val()
+			    	    }),
+		    	    error: function(){
+		    			  $('#reg').html("提交时,发生内部错误!点击下面Close按钮关闭窗口!<br>");
+				    	 },
+		    	    success: function(xml){
+		    	      	  $('#reg').html("提交完成,等待 Jack 验证身份!点击下面Close按钮关闭窗口!<br>")
+		    	    	 }
+			});
+		});
+	});
+	
+</script>
+<link rel="stylesheet" href="./css/jquery-ui-1.7.2.custom.css" type="text/css" media="screen">
+<center>
+<br>
+Friend List:<br>
+感谢支持我的,关心的我朋友们。<br><br>
+<div id="reg"></div>
+<hr>
+
+<table border="0" cellspacing="0" cellpadding="0">
+	<tr>
+		<td>Username</td>
+		<td><input type='text' name='username' id='username' class='text' /></td>
+		<td><div id="ue"></div></td>
+	</tr>
+	
+	<tr>
+		<td>Password</td>
+		<td><input type='text' name='password' id='password' class='text' /></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td>Repassword</td>
+		<td><input type='text' name='repassword' id='repassword' class='text' /></td>
+		<td><div id="repe"></div></td>
+	</tr>
+	
+	<tr>
+		<td>Email</td>
+		<td><input type='text' name='email' id='email' class='text' /></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td>QQ</td>
+		<td><input type='text' name='im' id='im' class='text' /></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td>Birthday</td>
+		<td><input type='text' name='birthday' id='birthday' class='text' /></td>
+		<td></td>
+	</tr>
+	
+	<tr>
+		<td>Homepage</td>
+		<td><input type='text' name='url' id='url' class='text' value="http://"/></td>
+		<td></td>
+	</tr>
+</table>
+<input type="submit" id="reguser" value="&nbsp;&nbsp;Submit&nbsp;&nbsp;">&nbsp;&nbsp;&nbsp;&nbsp;
+<input type="submit" id="Login" value="&nbsp;&nbsp;Close&nbsp;&nbsp;" onclick="tb_remove()">
+</center>

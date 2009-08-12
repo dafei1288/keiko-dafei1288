@@ -1,0 +1,25 @@
+     <script type="text/javascript" src="jquery1.3min.js"></script>
+    <script type="text/javascript" src="jqueryui.js"></script>
+ <script type="text/javascript" src="turn.js"></script>
+
+  <link rel="stylesheet" type="text/css" href="turn.css">
+			
+			  
+  <img id="target" src="code.png">
+		<script> 
+			  
+  $(document).ready(function(){
+    $( '#target' ).fold();
+  });
+    var defaults = {
+    directory: 'trun',      // The directory we're in
+    side: 'left',           // change me to "right" if you want rightness
+    turnImage: 'fold.png',  // The triangle-shaped fold image
+    maxHeight: 400,         // The maximum height. Duh.
+    starting_width: 80,     // The height and width 
+    starting_height: 80,    // with which to start (these should probably be camelCase, d'oh.)
+    autoCurl: false         // If this is set to true, the fold will curl/uncurl on mouseover/mouseout.
+  };
+
+			
+			</script>

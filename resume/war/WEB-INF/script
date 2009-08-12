@@ -1,0 +1,57 @@
+	<script>
+		$(document).ready(function() {
+		   $('#join2list').click(function() {
+			   $('#reg').html('');
+			   $('<p></p>')
+			    .html('<input type=\'text\' name=\'username\' id=\'username\' class=\'text\' value=\'昵称\' /><br>'
+			    +'<input type=\'text\' name=\'password\' id=\'password\' class=\'text\' value=\'密码\' /><br>'
+			    +'<input type=\'text\' name=\'email\' id=\'email\' class=\'text\' value=\'email\' /><br>'
+			    +'<input type=\'text\' name=\'im\' id=\'im\' class=\'text\' value=\'QQ\' /><br>'
+			    +'<input type=\'text\' name=\'birthday\' id=\'birthday\' class=\'text\' value=\'生日  格式 \' /><br>'
+			    +'<input type=\'text\' name=\'url\' id=\'url\' class=\'text\' value=\'homepage\' /><br>'
+				+'<a href=\'#sub\' onclick=\'return void(0)\' id=\'sub\'>提交</a>'
+				+'&nbsp;&nbsp;<a href=\'#sub\' onclick=\'return void(0)\' id=\'rest\'>取消</a>')				    
+			    .css('background', 'white')
+			    .appendTo($('#reg'));
+				//alert($('#username').val());
+			    //$('#reg').html('');
+			    $('#sub').click(function() {
+			    	$.ajax({
+			    	    url: '/jdogoogle',
+			    	    type: 'POST',
+			    	    dataType: 'text',
+			    	    timeout: 20000,
+			    	    data: ({
+				    	    action:'insert',
+			    	    	username:$('#username').val(),
+			    	    	password:$('#password').val(),
+			    	    	email:$('#email').val(),
+			    	    	im:$('#im').val(),
+			    	    	birthday:$('#birthday').val(),
+			    	    	url:$('#url').val()
+				    	    }),
+			    	    error: function(){
+			    			$('#reg').html("提交时,发生内部错误!").hide(5000,function(){
+		    	        		$('#reg').html('').show();
+			    	        });
+			    	    },
+			    	    success: function(xml){
+			    	        $('#reg').html("提交完成,等待 Jack 验证身份!").hide(5000,function(){
+			    	        		$('#reg').html('').show();
+			    	        		
+				    	        });
+			    	        
+			    	    }
+			    	});
+			    						
+				});
+
+			    $('#rest').click(function() {
+			    		$('#reg').html('');
+				    });
+			    				
+			});
+		 });
+
+		
+	</script>

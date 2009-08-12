@@ -186,7 +186,7 @@ span {
 						<br >
 						责任描述：项目组长
 						<br >
-						项目描述：校内网APP，WEBGAME,校内全国应用大赛三等奖
+						项目描述：校内网APP，WEBGAME,校内全国应用大赛三等奖,<strong>最高日百万PV</strong>,<strong>同时在线过万人</strong>
 					</p>
 					<br >
 					<p>

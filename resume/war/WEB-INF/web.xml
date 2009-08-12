@@ -1,10 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<!DOCTYPE web-app
-    PUBLIC "-//Sun Microsystems, Inc.//DTD Web Application 2.3//EN"
-    "http://java.sun.com/dtd/web-app_2_3.dtd">
-
-
-<web-app>
+<web-app version="2.4" xmlns="http://java.sun.com/xml/ns/j2ee" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"  
+    xsi:schemaLocation="http://java.sun.com/xml/ns/j2ee http://java.sun.com/xml/ns/j2ee/web-app_2_4.xsd">      
   <!-- Default page to serve -->
   <welcome-file-list>
     <welcome-file>index.jsp</welcome-file>
@@ -50,6 +46,17 @@
     <servlet-name>JdoGoogle</servlet-name>
     <url-pattern>/jdogoogle</url-pattern>
   </servlet-mapping>
+  
+  
+      <servlet>
+    <servlet-name>Daniel</servlet-name>
+    <servlet-class>net.fly78.guests.Daniel</servlet-class>
+  </servlet>
+ <servlet-mapping>
+    <servlet-name>Daniel</servlet-name>
+    <url-pattern>/daniel</url-pattern>
+  </servlet-mapping>
+  
   
    <servlet>
     <servlet-name>Resume</servlet-name>

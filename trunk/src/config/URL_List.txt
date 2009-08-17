@@ -1,0 +1,57 @@
+http://jibbering.com/faq/faq_notes/closures.html
+
+http://www.cn-cuckoo.com/2007/08/01/understand-javascript-closures-72.html
+
+http://developers.sun.com
+
+http://www.ibm.com/developerworks/
+
+http://www.javaworld.com/
+
+http://www.java.net/
+
+http://www.theserverside.com/
+
+http://www.scala-lang.org/
+
+https://visualvm.dev.java.net/
+
+http://www.zeroturnaround.com
+
+http://sourceforge.net/projects/advanced-gwt
+
+https://fly-proxy.appspot.com/  翻墙可以用
+
+http://www.cn-java.com/www1/
+
+http://www.javaly.cn/javahome/index.faces
+
+http://hk.sun.com/resources/software.jsp
+
+http://www.theserverside.com/tt/articles/article.tss?track=NL-461&ad=714456&l=TheAsynchronousWeb&asrc=EM_NLN_8688663&uid=8488260
+
+http://www.theserverside.com/blogs/thread.tss?track=NL-461&ad=714456&thread_id=55199&asrc=EM_NLN_8688666&uid=8488260
+
+http://www.theserverside.com/tt/articles/article.tss?track=NL-461&ad=714456&l=SmartURLs&asrc=EM_NLN_8688671&uid=8488260
+
+http://www.j2ee.me/docs/books/tutorial/uiswing/examples/components/index.html#TabComponentsDemo
+
+http://www.json.org/
+
+http://www.blogjava.net/gembin/archive/2009/08/16/291290.html  hbase
+
+http://www.javaeye.com/topic/408055  java版cmpp短信网关开讲解发计划
+
+http://www.blogjava.net/stone2083/archive/2007/12/20/169015.html
+
+/***************NODB solution********************/
+
+http://www.prevayler.org/
+
+http://code.google.com/p/nodb/
+
+http://www.dbmaintain.org/overview.html
+
+http://lucene.apache.org/
+
+/***************NODB solution********************/

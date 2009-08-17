@@ -1,0 +1,55 @@
+tomcat内存溢出总结 
+在生产环境中tomcat内存设置不好很容易出现内存溢出。造成内存原因是不一样的，当然处理方式也不一样。
+这里根据平时遇到的情况和相关资料进行一个总结。常见的一般会有下面三种情况：
+        1.OutOfMemoryError: Java heap space
+        2.OutOfMemoryError: PermGen space
+        3.OutOfMemoryError: unable to create new native thread.
+对于前两种情况，在应用本身没有内存泄露的情况下可以用设置tomcat jvm参数来解决。（-Xms -Xmx -XX:PermSize  -XX:MaxPermSize）
+最后一种可能需要调整操作系统和tomcat jvm参数同时调整才能达到目的。
+
+第一种：是堆溢出。
+        在JVM中如果98％的时间是用于GC且可用的 Heap size 不足2％的时候将抛出此异常信息。
+        没有内存泄露的情况下，调整-Xms -Xmx参数可以解决。
+        -Xms:初始堆大小 
+        -Xmx:最大堆大小 
+        但堆的大小受下面三方面影响：
+        1.相关操作系统的数据模型（32-bt还是64-bit）限制；（32位系统下，一般限制在1.5G~2G；我在2003 server 系统下（物理内存：4G和6G，jdk：1.6）测试 1612M，64为操作系统对内存无限制。）
+        2.系统的可用虚拟内存限制；
+        3.系统的可用物理内存限制。
+        堆的大小可以使用 java -Xmx***M  version 命令来测试。支持的话会出现jdk的版本号，不支持会报错。
+         -Xms -Xmx一般配置成一样比较好比如set JAVA_OPTS= -Xms1024m -Xmx1024m 
+
+第二种：永久保存区域溢出
+        PermGen space的全称是Permanent Generation space,是指内存的永久保存区域。这一部分用于存放Class和Meta的信息,Class在被 Load的时候被放入PermGen space区域，它和和存放Instance的Heap区域不同,GC(Garbage Collection)不会在主程序运行期对PermGen space进行清理，所以如果你的APP会LOAD很多CLASS的话,就很可能出现PermGen space错误。这种错误常见在web服务器对JSP进行pre compile的时候。但目前的hibernate和spring项目中也很容易出现这样的问题。http://www.javaeye.com/topic/80620?page=1 的帖子有讨论的这个问题。可能是由于这些框架会动态class，而且jvm的gc是不会清理PemGen space的，导致内存溢出。
+        这一个一般是加大-XX:PermSize  -XX:MaxPermSize 来解决问题。
+        -XX:PermSize 永久保存区域初始大小
+        -XX:PermSize 永久保存区域初始最大值
+        这一般结合第一条使用，比如 set JAVA_OPTS= -Xms1024m -Xmx1024m  -XX:PermSize=128M -XX:PermSize=256M
+        有一点需要注意：java -Xmx***M  version 命令来测试的最大堆内存是 -Xmx与 -XX:PermSize的 和 比如系统支持最大的jvm堆大小事1.5G，那  -Xmx1024m  -XX:PermSize=768M 是无法运行的。
+        
+第三种：无法创建新的线程。
+        这种现象比较少见，也比较奇怪，主要是和jvm与系统内存的比例有关。
+        这种怪事是因为JVM已经被系统分配了大量的内存(比如1.5G)，并且它至少要占用可用内存的一半。有人发现，在线程个数很多的情况下，你分配给JVM的内存越多，那么，上述错误发生的可能性就越大。
+        
+        产生这种现象的原因如下（从这个blog中了解到原因：http://hi.baidu.com/hexiong/blog/item/16dc9e518fb10c2542a75b3c.html）： 
+        每一个32位的进程最多可以使用2G的可用内存，因为另外2G被操作系统保留。这里假设使用1.5G给JVM，那么还余下500M可用内存。这500M内存中的一部分必须用于系统dll的加载，那么真正剩下的也许只有400M，现在关键的地方出现了：当你使用Java创建一个线程，在JVM的内存里也会创建一个Thread对象，但是同时也会在操作系统里创建一个真正的物理线程(参考JVM规范)，操作系统会在余下的400兆内存里创建这个物理线程，而不是在JVM的1500M的内存堆里创建。在jdk1.4里头，默认的栈大小是256KB，但是在jdk1.5里头，默认的栈大小为1M每线程，因此，在余下400M的可用内存里边我们最多也只能创建400个可用线程。
+
+        这样结论就出来了，要想创建更多的线程，你必须减少分配给JVM的最大内存。还有一种做法是让JVM宿主在你的JNI代码里边。
+
+给出一个有关能够创建线程的最大个数的估算公式：
+
+        (MaxProcessMemory - JVMMemory - ReservedOsMemory) / (ThreadStackSize) = Number of threads
+
+        对于jdk1.5而言，假设操作系统保留120M内存：
+        1.5GB JVM: (2GB-1.5Gb-120MB)/(1MB) = ~380 threads
+        1.0GB JVM: (2GB-1.0Gb-120MB)/(1MB) = ~880 threads
+        在2000/XP/2003的boot.ini里头有一个启动选项，好像是：/PAE /3G ，可以让用户进程最大内存扩充至3G，这时操作系统只能占用最多1G的虚存。那样应该可以让JVM创建更多的线程。
+        因此这种情况需要结合操作系统进行相关调整。
+
+因此：我们需要结合不同情况对tomcat内存分配进行不同的诊断才能从根本上解决问题。
+
+参考资料（从这些资料中受益良多）：
+http://www.javaeye.com/topic/80620?page=1 
+http://ggmm.blog.sohu.com/117545379.html 
+http://hi.baidu.com/hexiong/blog/item/16dc9e518fb10c2542a75b3c.html 
+http://www.wujianrong.com/archives/2006/12/javalangoutofmemoryerror_permg.html 

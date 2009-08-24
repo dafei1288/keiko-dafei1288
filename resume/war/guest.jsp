@@ -13,6 +13,24 @@
 	
 		List<GuestBookBean> l = (List<GuestBookBean>)request.getAttribute("list");
 	%>
-	<%=l.size()+"aaaa" %>
+	
+	<%
+	
+		String r = (String)request.getAttribute("right");
+		
+		if("right".equals(r)){
+		%>
+		<%=l.size()+"aaaa" %>
+		
+			<from action="/daniel" method="post" >
+				
+			
+			</from>
+		<%
+		}
+	%>
+	
+	
+	
 </body>
 </html>

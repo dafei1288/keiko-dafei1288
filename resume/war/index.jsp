@@ -135,6 +135,7 @@
 			     <li class="span-6"><a href="http://kenai.com">Kenai</a></li>
 			     <li class="span-6"><a href="http://www.apache.org">Apache</a></li>
 				 <li class="span-6"><a href="http://code.google.com">Google Code</a></li>
+				 <li class="span-6"><a href="http://www.dzone.com/">DZone</a></li>
 		</ul>
     </div>
 	<br>

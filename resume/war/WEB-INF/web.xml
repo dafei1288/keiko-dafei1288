@@ -66,6 +66,15 @@
     <servlet-name>Resume</servlet-name>
     <url-pattern>/resume</url-pattern>
   </servlet-mapping>
+  <servlet>
+  
+ <servlet-name>GroovyServlet</servlet-name>
+ <servlet-class>groovy.servlet.GroovyServlet</servlet-class>
+</servlet>
+<servlet-mapping>
+ <servlet-name>GroovyServlet</servlet-name>
+ <url-pattern>*.groovy</url-pattern>
+</servlet-mapping>
   
 </web-app>
 <!--  

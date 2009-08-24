@@ -76,6 +76,9 @@ public class Daniel extends HttpServlet {
 			response.sendRedirect("/guest.jsp");
 		}
 		
+		
+		request.setAttribute("right","right");
+		
 		if("insert".equals(request.getParameter("action"))){
 			
 			

@@ -105,6 +105,25 @@
       </tr>
     </table>
     
+    <p>论文</p>
+    <table border="0" cellspacing="0" cellpadding="0">
+      <tr>
+        <th class="span-6">subject</th>
+        <th class="span-8">teacher</th>
+        <th class="span-10">illuminate</th>
+      </tr>
+      <tr>
+        <td><a href="./tla/index.html">Specifying the Caesar cipher in TLA+</a></td>
+		<td><b>Prof. Maode Ma</b><br>School of Electrical and Electronic Engineering,<br>Nanyang Technological University, Singapore</td>
+        <td>Use TLA+(The Temporal Logic of Actions) specifyed the Caesar cipher!</td>
+      </tr>
+      <tr class="even">
+        <td><a href="./tla/uml.htm" >My phone book</a></td>
+		<td><b>Prof. Jiawan Zhang</b><br>School of Computer Software Tianjin University</td>
+        <td>Modeling a phone book application in JAVA by RSA v7.5!</td>
+      </tr>
+    </table>
+    
     <p>
     <em><strong>李佳麒(Jack Li) </strong></em> Jack Li是一名代码民工，走在JAVA的路上，迷恋编码和设计模式
 	</p>

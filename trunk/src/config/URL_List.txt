@@ -1,3 +1,5 @@
+http://cse.stanford.edu/
+
 http://jibbering.com/faq/faq_notes/closures.html
 
 http://www.cn-cuckoo.com/2007/08/01/understand-javascript-closures-72.html
@@ -20,7 +22,7 @@ http://www.zeroturnaround.com
 
 http://sourceforge.net/projects/advanced-gwt
 
-https://fly-proxy.appspot.com/  ·­Ç½¿ÉÒÔÓÃ
+https://fly-proxy.appspot.com/  ï¿½ï¿½Ç½ï¿½ï¿½ï¿½ï¿½ï¿½ï¿½
 
 http://www.cn-java.com/www1/
 
@@ -40,10 +42,12 @@ http://www.json.org/
 
 http://www.blogjava.net/gembin/archive/2009/08/16/291290.html  hbase
 
-http://www.javaeye.com/topic/408055  java°æcmpp¶ÌÐÅÍø¹Ø¿ª½²½â·¢¼Æ»®
+http://www.javaeye.com/topic/408055  javaï¿½ï¿½cmppï¿½ï¿½ï¿½ï¿½ï¿½ï¿½Ø¿ï¿½ï¿½ï¿½ï¿½â·¢ï¿½Æ»ï¿½
 
 http://www.blogjava.net/stone2083/archive/2007/12/20/169015.html
 
+
+http://www.jpk.pku.edu.cn/pkujpk/course/sjjg/honor/index.htm
 /***************NODB solution********************/
 
 http://www.prevayler.org/

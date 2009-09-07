@@ -1,0 +1,17 @@
+<!--禁止另存为-->
+<noscript>
+<iframe scr="*.htm"></iframe>
+</noscript>
+ 
+<!--禁止复制 禁止右键-->
+<SCRIPT LANGUAGE=javascript>
+function click() {
+}
+function click1() {
+if (event.button==2) {alert('禁止右键') }}
+function CtrlKeyDown(){
+if (event.ctrlKey) {alert('禁止拷贝') }}
+document.onkeydown=CtrlKeyDown;
+document.onselectstart=click;
+document.onmousedown=click1;
+</SCRIPT>

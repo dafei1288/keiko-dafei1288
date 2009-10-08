@@ -66,6 +66,59 @@ public class RandomAction {
 		
 		return rt;
 	}
+	
+	
+	
+	
+	
+	
+	
+	/**
+	 * 获取并删除当前元素
+	 * */
+	public RandomPOJO getNextAndRemove(){
+		RandomPOJO rt = RandomPOJO.getZERORandomPOJO();
+		/*
+		for(RandomPOJO rpojo:alrp){
+			
+		}
+		*/
+		int powersum = 0;
+		int randomseed = 0;
+		//System.out.println(alrp instanceof RandomPOJOList);
+		if(alrp instanceof RandomPOJOList){
+			randomseed = ((RandomPOJOList)alrp).getSumPower();
+			//System.out.println(randomseed);
+		}else{
+			for(RandomPOJO rp : alrp){
+				randomseed+=rp.getPower();
+			}
+		}
+		
+		int rtnum = _r.nextInt(randomseed);
+		for(int i=0;i<alrp.size();i++){
+			//RandomPOJO ppt_i = alrp.get(i);
+			/*
+			powersum = 0;
+			for(int j=0;j<=i;j++){
+				powersum += alrp.get(j).getPower();
+			}
+			*/
+			powersum+=alrp.get(i).getPower();
+			if(rtnum<powersum){
+				rt = alrp.get(i);
+				alrp.remove(i);
+				break;
+			}
+			
+		}
+		
+		return rt;
+	}
+	
+	
+	
+	
 	/**
 	 * 获得随机数种子
 	 * @return Random

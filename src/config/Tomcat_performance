@@ -1,0 +1,73 @@
+Tomcat性能调优方案 
+一、操作系统调优 
+对于操作系统优化来说，是尽可能的增大可使用的内存容量、提高CPU的频率，保证文件系统的读写速率等。经过压力测试验证，在并发连接很多的情况下，CPU的处理能力越强，系统运行速度越快。。 
+【适用场景】 任何项目。 
+二、Java虚拟机调优 
+应该选择SUN的JVM，在满足项目需要的前提下，尽量选用版本较高的JVM，一般来说高版本产品在速度和效率上比低版本会有改进。 
+JDK1.4比JDK1.3性能提高了近10%-20%，JDK1.5比JDK1.4性能提高25%-75%。 
+因此对性能要求较高的情况推荐使用 JDK1.6。 
+【适用场景】 任何项目。 
+三、Apache集成Tomcat 
+Web服务器专门处理HTTP请求，应用服务器是通过很多协议为应用提供商业逻辑。虽然Tomcat也可以作web服务器，但其处理静态html的速度比不上Apache，且其作为web服务器的功能远不如Apache，因此把Apache和Tomcat集成起来，将html和Jsp的功能部分进行明确分工，让Tomcat只处理Jsp部分，其他的由Apache，IIS等web服务器去处理，由此大大提高Tomcat的运行效率。 
+如果一个项目中大量使用了静态页面、大量的图片等，并有有较大的访问量，推荐使用Apache集成Tomcat的方式来提高系统的整体性能。 
+Apache和Tomcat的整合有三种方式，分别是JK、http_proxy和ajp_proxy.其中JK方式是最常见的方式，JK本身有两个版本分别是1和2，目前1最新版本是1.2.8，而版本2早已经废弃了。http_proxy是利用Apache自带的mod_proxy模块使用代理技术来连接Tomcat。Ajp_proxy连接方式其实跟http_proxy方式一样，都是由mod_proxy所提供的功能。只需要把配置中的http://换成ajp://,同时连接的是Tomcat的AJP Connector所在的端口。 
+相对于JK的连接方式，后两种在配置上比较简单的，灵活性方面也一点都不逊色。但就稳定性而言不像JK这样久经考验，所以建议采用JK的连接方式。 
+Apache+JK+Tomcat配置： 
+使用到的两个配置文件分别是：httpd.conf和mod_jk.conf。其中httpd.conf是Apache服务器的配置文件，用来加载JK模块以及指定JK配置文件信息。mod_jk.conf是到Tomcat服务器的连接定义文件。 
+【部署步骤】 
+1.安装Apache服务器 
+2.部署Tomcat 
+3.将mod_jk.so拷贝到modules目录下面 
+4.修改httpd.conf和mod_jk.conf 
+【适用场景】  大量使用静态页面的应用系统。 
+四、Apache和Tomcat集群 
+对于并发要求很高的系统，我们需要采取负载均衡的方式来分担Tomcat服务器的压力。负载均衡实现大概有四种：第一是通过DNS，但只能简单的实现轮流分配，不能处理故障；第二是基于MS IIS,windows 2003 server本身就带了负载均衡服务；第三是硬件方式，通过交换机功能或专门的负载均衡设备来实现；第四种是软件的方式，通过一台负载均衡服务器进行，上面安装软件。使用Apache Httpd Server做负载均衡器，Tomcat集群节点使用Tomcat就可以做到上述第四种方式，这种方式比较灵活，成本相对比较低，另外一个很大的优点就是可以根据应用情况和服务器的情况做一些灵活的配置。所以推荐使用Apache+Tomcat集群来实现负载均衡。 
+采用Tomcat集群可以最大程度的发挥服务器的性能，可以在配置较高的服务器上部署多个Tomcat，也可以在多台服务器上分别部署Tomcat，Apache和Tomcat整合的方式还是JK方式。经过验证，系统对大用户量使用的响应方面，Apache+3Tomccat集群> Apache+2Tomcat集群 > Apache集成Tomcat > 单个Tomcat。并且采用Apache+多Tomcat集群的部署方式时，如果一个Tomcat出现宕机，系统可以继续使用，所以在硬件系统性能足够优越的情况下，需要尽量发挥软件的性能，可以采用增加Tomcat集群的方式。 
+Apache+Tomcat集群的方式使用到得配置文件有httpd.conf、mod_jk.conf、workers.properties。其中mod_jk.conf是对JK信息的配置，包括JK的路径等，workers.properties配置文件是对Tomcat服务器的连接定义文件。 
+Apache需要调整运行参数，这样才能构建一个适合相应网络环境的web服务。其中可进行的优化配置如下： 
+1. 设置MPM（Multi Processing Modules多道处理模块）。ThreadPerChild,这个参数用于设置每个进程的线程数，在Windows环境下默认值是64，最大值是1920，建议设置为100-500之间，服务器性能高的话值大一些，反之小一些。MaxRequestPerChild表示每个子进程能够处理的最大请求数。这个参数的值更大程度上取决于服务器的内存，如果内存比较大的话可以设置为很大的参数，否则设置一个较小的值，建议值是3000. 
+2. 关闭DNS和名字解析   HostnameLookups off 
+3. 打开UseCanonicalName模块  UseCanonicalName on 
+4. 关闭多余模块  一般来说，不需要加载的模块有，mod_include.so、mod_autoindex.so、mod_access.so、mod_auth.so. 
+5. 打开KeepAlive支持  
+KeepAlive on, KeepAliveTimeout 15 MaxKeepAliveRequests 1000 
+     根据实际经验，通过Apache和Tomcat集群的方式提高系统性能的效果十分明显，这种方式可以最大化的利用硬件资源，通过多个Tomcat的处理来分担单Tomcat时的压力。 
+【部署步骤】 
+1.安装Apache服务器 
+2.部署Tomcat集群，即多个相同的Tomcat。 
+3.将mod_jk.so拷贝到modules目录下面 
+4.修改httpd.conf、mod_jk.conf和workers.properties 
+【适用场景】  并发用户量及在线使用用户数量比较高的系统。 
+五、Tomcat自身优化 
+1. JVM参数调优：-Xms<size> 表示JVM初始化堆的大小，-Xmx<size>表示JVM堆的最大值。这两个值的大小一般根据需要进行设置。当应用程序需要的内存超出堆的最大值时虚拟机就会提示内存溢出，并且导致应用服务崩溃。因此一般建议堆的最大值设置为可用内存的最大值的80%。在catalina.bat中，设置JAVA_OPTS='-Xms256m -Xmx512m'，表示初始化内存为256MB，可以使用的最大内存为512MB。 
+2. 禁用DNS查询 
+　当web应用程序向要记录客户端的信息时，它也会记录客户端的IP地址或者通过域名服务器查找机器名转换为IP地址。DNS查询需要占用网络，并且包括可能从很多很远的服务器或者不起作用的服务器上去获取对应的IP的过程，这样会消耗一定的时间。为了消除DNS查询对性能的影响我们可以关闭DNS查询，方式是修改server.xml文件中的enableLookups参数值： 
+Tomcat4 
+
+<Connector className="org.apache.coyote.tomcat4.CoyoteConnector" port="80" minProcessors="5" maxProcessors="75" enableLookups="false" redirectPort="8443" acceptCount="100" debug="0" connectionTimeout="20000" useURIValidationHack="false" disableUploadTimeout="true" /> 
+
+Tomcat5 
+
+<Connector port="80" maxThreads="150" minSpareThreads="25" maxSpareThreads="75" enableLookups="false" redirectPort="8443" acceptCount="100" debug="0" connectionTimeout="20000" disableUploadTimeout="true"/> 
+3. 调整线程数 
+通过应用程序的连接器（Connector）进行性能控制的的参数是创建的处理请求的线程数。Tomcat使用线程池加速响应速度来处理请求。在Java中线程是程序运行时的路径，是在一个程序中与其它控制线程无关的、能够独立运行的代码段。它们共享相同的地址空间。多线程帮助程序员写出CPU最大利用率的高效程序，使空闲时间保持最低，从而接受更多的请求。 
+    Tomcat4中可以通过修改minProcessors和maxProcessors的值来控制线程数。这些值在安装后就已经设定为默认值并且是足够使用的，但是随着站点的扩容而改大这些值。minProcessors服务器启动时创建的处理请求的线程数应该足够处理一个小量的负载。也就是说，如果一天内每秒仅发生5次单击事件，并且每个请求任务处理需要1秒钟，那么预先设置线程数为5就足够了。但在你的站点访问量较大时就需要设置更大的线程数，指定为参数maxProcessors的值。maxProcessors的值也是有上限的，应防止流量不可控制（或者恶意的服务攻击），从而导致超出了虚拟机使用内存的大小。如果要加大并发连接数，应同时加大这两个参数。web server允许的最大连接数还受制于操作系统的内核参数设置，通常Windows是2000个左右，Linux是1000个左右。 
+      在Tomcat5对这些参数进行了调整，请看下面属性： 
+maxThreads    Tomcat使用线程来处理接收的每个请求。这个值表示Tomcat可创建的最大的线程数。 
+acceptCount    指定当所有可以使用的处理请求的线程数都被使用时，可以放到处理队列中的请求数，超过这个数的请求将不予处理。 
+connnectionTimeout    网络连接超时，单位：毫秒。设置为0表示永不超时，这样设置有隐患的。通常可设置为30000毫秒。 
+minSpareThreads    Tomcat初始化时创建的线程数。 
+
+maxSpareThreads     一旦创建的线程超过这个值，Tomcat就会关闭不再需要的socket线程。 
+     最好的方式是多设置几次并且进行测试，观察响应时间和内存使用情况。在不同的机器、操作系统或虚拟机组合的情况下可能会不同，而且并不是所有人的web站点的流量都是一样的，因此没有一刀切的方案来确定线程数的值。 
+六、APR库使用 
+Tomcat中使用APR库，其实就是在Tomcat中使用JNI的方式来读取文件以及进行网络传输。可以大大提升Tomcat对静态文件的处理性能，同时如果你使用了HTTPS方式传输的话，也可以提升SSL的处理性能。 
+一般在Windows下，可以直接下载编译好的二进制版本的dll库文件来使Tomcat启用APR，一般建议拷贝库文件tcnative-1.dll到Tomcat的bin目录下。而在Linux下，可以直接解压和安装bin目录下的tomcat_native.tar.gz文件，编译之前要确保apr库已经安装。 
+怎么才能判断Tomcat是否已经启用了APR库呢？方法是通过看Tomcat的启动日志： 
+如果没有启用APR，则启动日志一般有这么一条： 
+org.apache.coyote.http11.Http11Protocol start 
+如果启用了APR，则这条日志就会变成： 
+org.apache.coyote.http11.Http11AprProtocol start 
+tcnative-1.dll 下载地址：http://tomcat.heanet.ie/native/ 
+   调优综述 
+      根据以上分析，如果想要Tomcat达到最优的效果，首先要争取使得操作系统以及网络资源达到最优，并且最好使用高版本的JDK。对于有大量静态页面的系统，采用Apache集成Tomcat的方式，把静态页面交由Apache处理，动态部分交由Tomcat处理，能极大解放Tomcat的处理能力。使用ARP库也能极大的提高Tomcat对静态文件的处理能力。对于并发要求较高的系统，采用Apache加Tomcat集群的方式，将负载分别分担到多个Tomcat上，能很大的提高系统的性能，充分利用硬件资源。同时需要对Tomcat自身进行优化，包括增大内存、调节并发线程数等。 

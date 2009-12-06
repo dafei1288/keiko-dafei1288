@@ -2,7 +2,6 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER"/>
-	<classpathentry kind="output" path="bin"/>
 	<classpathentry kind="lib" path="lib/unrar_bin_1.jar"/>
 	<classpathentry kind="lib" path="lib/ant.jar"/>
 	<classpathentry kind="lib" path="lib/asm-all-3.1.jar"/>
@@ -16,4 +15,8 @@
 	<classpathentry kind="lib" path="lib/quartz-all-1.6.4.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api-2.4.jar"/>
 	<classpathentry kind="lib" path="lib/servlet-api.jar"/>
+	<classpathentry kind="lib" path="lib/antlr.jar"/>
+	<classpathentry kind="lib" path="lib/chardet.jar"/>
+	<classpathentry kind="lib" path="lib/cpdetector_1.0.7.jar"/>
+	<classpathentry kind="output" path="bin"/>
 </classpath>

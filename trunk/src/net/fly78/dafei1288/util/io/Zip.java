@@ -17,6 +17,7 @@ public class Zip {
 		zip(out, f, null);
 		System.out.println("zip done");
 		out.close();
+
 	}
 
 	private static void zip(ZipOutputStream out, File f, String base)
@@ -28,9 +29,9 @@ public class Zip {
 				out.putNextEntry(new ZipEntry(base + "/"));
 			base = base == null ? "" : base + "/";
 			for (int i = 0; i < fc.length; i++) {
-				String r = new String( fc[i].getName().getBytes("utf-8"),"iso8859-1");
-				System.out.println("===》"+fc[i].getName()+" //  "+r+" // "+new String(r.getBytes("iso8859-1"),""));
-				zip(out, fc[i], base +new String( fc[i].getName().getBytes("utf-8"),"iso8859-1"));
+				String r = new String( fc[i].getName().getBytes(),"iso8859-1");
+				//System.out.println("===》"+fc[i].getName()+" //  "+r+" // "+new String(r.getBytes("iso8859-1"),""));
+				zip(out, fc[i], base +r);
 			}
 		} else {
 			out.putNextEntry(new ZipEntry(base));

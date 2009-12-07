@@ -230,8 +230,9 @@ private static final int BUFFEREDSIZE = 1024;
     public static void main(String[] args){
     	Decompression d = new Decompression();
     	try {
-			d.unrar("C:\\lucene\\testL.jar", "C:\\lucene\\ttt");
-		} catch (Exception e) {
+			//d.unrar("C:\\lucene\\testL.jar", "C:\\lucene\\ttt");
+    		d.zip("d:\\tk", "d:\\ttt.zip");
+    	} catch (Exception e) {
 			e.printStackTrace();
 		}
     }

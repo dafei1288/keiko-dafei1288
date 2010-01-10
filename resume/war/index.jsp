@@ -55,6 +55,15 @@
         <th class="span-8">项目描述</th>
         <th class="span-10">项目合作人</th>
       </tr>
+	<tr>
+        <td><a href="#">MiniSQL</a></td>
+		<td>
+			自己编写的JAVA数据库	 
+		</td>
+        <td></td>
+      </tr>
+
+
       <tr>
         <td><a href="http://www.fly78.net">飞翔工作室</a></td>
 		<td>

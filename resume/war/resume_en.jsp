@@ -107,7 +107,7 @@ span {
 						<br >
 						Desired Location： TIANJIN , BEIJING , SHANGHAI , SHENZHEN
 						<br >
-						Expected Salary(before tax)： 5k-8k RMB/Month 
+						Expected Salary(before tax)： 6k-10k RMB/Month 
 						<br >
 						Current Situation： In 1 month 
 
@@ -142,7 +142,20 @@ span {
 					<table>
 						<tr>
 							<td class="top" width="18%">
-								2007/12 -- Now:
+								2009/12 -- Now:
+							</td>
+							<td>
+								TianJin NanDat GenarelData Company | Senior Software Engineer
+								<br >
+								DW&DM | Private | Company Size:Less than 200 | 5k RMB/Month
+								<br >
+								Code writer & Designer (GBase BI suit , Chart Designer Toolkit)
+							</td>
+						</tr>
+					
+						<tr>
+							<td class="top" width="18%">
+								2007/12 -- 2009/09:
 							</td>
 							<td>
 								TianJin SanDian Network Company | Senior Software Engineer
@@ -159,8 +172,23 @@ span {
 					<h6>
 						Project Experience
 					</h6>
+					
 					<p>
-						2009/04 -- Now：Kai Xin Za Ren Wang
+						2009/09 -- Now：GBase BI suit
+						<br >
+						Software Environment：JEE 5 + Script Language + Flex SDK  + DB(s)
+						<br >
+						Development Tools：Eclipse , Flex Builder
+						<br >
+						Responsibility describe：Chart Designer Toolkit 
+						<br >
+						Project characteristics：<b>GBase BI is a style of SOA ,  provide service and resource for other models ，define .gbrf(GBase BI Recourse File) protocol,
+						</b>
+					</p>
+					<br >
+					
+					<p>
+						2009/04 -- 2009/08：Kai Xin Za Ren Wang
 						<br >
 						Software Environment：JEE 5 , Mysql 5
 						<br >

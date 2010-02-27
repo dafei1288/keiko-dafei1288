@@ -388,11 +388,9 @@ span {
 
 				<a href="http://validator.w3.org/check?uri=referer"><img
 						src="./images/valid.png" alt="Valid HTML 4.01 Strict" height="31"
-						width="88" class="top ">
-				</a>
-				<a href="http://appengine.google.com/">
-					 <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
+						width="88" class="top "></a><a href="http://appengine.google.com/"><img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
 				alt="由 Google App Engine 提供空间" /></a>
+				&nbsp;&nbsp;&nbsp;&nbsp;Last update :  2/27/2010
 			</p>
 		</div>
 

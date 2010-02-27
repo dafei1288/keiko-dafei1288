@@ -55,8 +55,8 @@
         <th class="span-8">项目描述</th>
         <th class="span-10">项目合作人</th>
       </tr>
-	<tr>
-        <td><a href="#">MiniSQL</a></td>
+	<tr class="even">
+        <td><a href="https://code.google.com/p/jim-jack/">JimSQL</a>(new)</td>
 		<td>
 			自己编写的JAVA数据库	 
 		</td>
@@ -137,7 +137,7 @@
     <em><strong>李佳麒(Jack Li) </strong></em> Jack Li是一名代码民工，走在JAVA的路上，迷恋编码和设计模式
 	</p>
 	
-	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>],[<a href="http://user.qzone.qq.com/78338591?ptlang=2052">QQ Zone</a>]</p>
+	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>(closed)],[<a href="http://user.qzone.qq.com/78338591?ptlang=2052">QQ Zone</a>]</p>
     
     
     <div class="box">
@@ -174,7 +174,7 @@
     <a href="http://appengine.google.com/">
     <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
 alt="由 Google App Engine 提供空间"></a>
-    
+    &nbsp;&nbsp;&nbsp;&nbsp;Last update :  2/27/2010
     </p>
     
   </div>

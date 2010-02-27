@@ -390,7 +390,7 @@ span {
 				<a href="http://appengine.google.com/">
     <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
 alt="space supports by Google App Engine" /></a>
-		
+		&nbsp;&nbsp;&nbsp;&nbsp;Last update :  2/27/2010
 			</p>
 		</div>
 

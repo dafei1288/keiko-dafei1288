@@ -51,9 +51,9 @@
   
     <table border="0" cellspacing="0" cellpadding="0">
       <tr>
-        <th class="span-6">项目名称</th>
-        <th class="span-8">项目描述</th>
-        <th class="span-10">项目合作人</th>
+        <th class="span-6">Project Name</th>
+        <th class="span-8">Describe</th>
+        <th class="span-10">Partner</th>
       </tr>
 	<tr class="even">
         <td><a href="https://code.google.com/p/jim-jack/">JimSQL</a>(new)</td>
@@ -114,7 +114,7 @@
       </tr>
     </table>
     
-    <p>论文</p>
+    <p>Papers</p>
     <table border="0" cellspacing="0" cellpadding="0">
       <tr>
         <th class="span-6">subject</th>

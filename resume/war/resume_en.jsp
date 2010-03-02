@@ -371,8 +371,11 @@ span {
 					<li><a href="crosswall.php"
 						title="dafei's simple example ,which is crosswall to the forbidden webside">cross wall</a></li>
 					<li><a href="py/index.php"
-					title="if ur OS can't type Chinese,try this URL"><b>to
-						Daniel the online input method</b></a></li>
+					title="if ur OS can't type Chinese,try this URL">to
+						Daniel the online input method</a></li>
+					<li><a href="http://jackli1288.appspot.com/"
+					title="miniBlog"><b>to
+						miniBlog</b></a></li>
 				</ul>
 			</div>
 

@@ -1,4 +1,4 @@
-<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
+zhe<%@ page language="java" import="java.util.*" pageEncoding="utf-8"%>
 <!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01//EN"
    "http://www.w3.org/TR/html4/strict.dtd">
 
@@ -65,7 +65,7 @@
 
 
       <tr>
-        <td><a href="http://www.fly78.net">飞翔工作室</a></td>
+        <td><a href="http://www.fly78.net">飞翔工作室</a>(closed)</td>
 		<td>
 			自从大一开始，苦心经营的心灵家园		 
 		</td>
@@ -112,6 +112,13 @@
 		</td>
         <td>&nbsp;</td>
       </tr>
+        <tr>
+        <td><a href="http://jackli1288.appspot.com/">miniBlog</a></td>
+		<td>
+			Jack Li's miniBlog
+		</td>
+        <td>&nbsp;</td>
+      </tr>
     </table>
     
     <p>Papers</p>
@@ -131,15 +138,20 @@
 		<td><b>Prof. Jiawan Zhang</b><br>School of Computer Software Tianjin University</td>
         <td>Modeling a phone book application in JAVA by RSA v7.5!</td>
       </tr>
+       <tr>
+        <td><a href="#">A simple implemention of RDBMS</a></td>
+		<td><b>Prof. Xiujun Gong</b><br>School of Computer Software Tianjin University</td>
+        <td>This topic is from ACM problem of PKU! And the software is implemented in Java</td>
+      </tr>
     </table>
     
     <p>
     <em><strong>李佳麒(Jack Li) </strong></em> Jack Li是一名代码民工，走在JAVA的路上，迷恋编码和设计模式
 	</p>
 	
-	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>(closed)],[<a href="http://user.qzone.qq.com/78338591?ptlang=2052">QQ Zone</a>]</p>
+	 <p><em><strong>曾用名：大飞,dafei1288</strong></em>  [QQ:78338591],[<a href="http://www.fly78.net/blog/index.php/1/">blog</a>(closed)],[<a href="http://user.qzone.qq.com/78338591?ptlang=2052">QQ Zone</a>],[<a href="http://jackli1288.appspot.com/">miniBlog</a>]</p>
     
-    
+    <!-- 
     <div class="box">
     	<strong>Friend List:</strong><a id="join2list" class="thickbox" href="reg.htm?height=530&amp;width=580&amp;modal=true" title="join into">(Click to join into the list)</a><br>
 		<ul class="horizontal" >
@@ -148,7 +160,7 @@
 			<li class="span-5"><a href="http://82094798.qzone.qq.com">芊芊</a></li>
 		</ul>
     </div>
-    
+     -->
     <div class="box">
     	<strong>Community List:</strong>
 		<ul class="horizontal" >
@@ -173,8 +185,8 @@
     
     <a href="http://appengine.google.com/">
     <img src="http://code.google.com/appengine/images/appengine-silver-120x30.gif" 
-alt="由 Google App Engine 提供空间"></a>
-    &nbsp;&nbsp;&nbsp;&nbsp;Last update :  2/27/2010
+alt="由 Google App Engine 提供空间"></a> 
+    &nbsp;&nbsp;&nbsp;&nbsp;Last update :3/3/2010 
     </p>
     
   </div>

@@ -7,8 +7,9 @@ import java.util.Calendar;
 
 public class CrackMyeclipseBlue7 {
 	public static final void main(String[] args) {
-		String id = "blued"; // 可更改为您的名字
+		String id = "dafei1288"; // 可更改为您的名字
 		String num = "999";// 许可证数量
+		System.out.println(id);
 		System.out.println(getSerial(id, "100", num, false));
 	}
  

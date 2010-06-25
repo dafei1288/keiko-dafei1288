@@ -18,5 +18,20 @@
 	<classpathentry kind="lib" path="lib/antlr.jar"/>
 	<classpathentry kind="lib" path="lib/chardet.jar"/>
 	<classpathentry kind="lib" path="lib/cpdetector_1.0.7.jar"/>
+	<classpathentry kind="lib" path="lib/commons-lang-2.4.jar"/>
+	<classpathentry kind="lib" path="lib/htmlcleaner2_1.jar"/>
+	<classpathentry kind="lib" path="lib/jai_codec.jar"/>
+	<classpathentry kind="lib" path="lib/jai_core.jar"/>
+	<classpathentry kind="lib" path="lib/luabsf-1.1.jar"/>
+	<classpathentry kind="lib" path="lib/iText-2.0.8.jar"/>
+	<classpathentry kind="lib" path="lib/iText-rtf-2.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/iText-rups-2.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/iText-toolbox-2.1.7.jar"/>
+	<classpathentry kind="lib" path="lib/iTextAsian.jar"/>
+	<classpathentry kind="lib" path="lib/jdom-contrib.jar"/>
+	<classpathentry kind="lib" path="lib/jdom.jar"/>
+	<classpathentry kind="lib" path="lib/jxl.jar"/>
+	<classpathentry kind="lib" path="lib/ojdbc14.jar"/>
+	<classpathentry kind="lib" path="lib/commons-io-1.4.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>

@@ -32,13 +32,41 @@ public class FileUtilsExt extends FileUtils {
 	 * 获取文件扩展名
 	 * */
 	public static String getFileExtensionName(File f) {
-	    if (f.getName().lastIndexOf(".") == -1) {
+	   return getFileExtensionName(f.getName());
+	 }
+	/**
+	 * 获取文件扩展名
+	 * */
+	public static String getFileExtensionName(String f) {
+	    if (f.lastIndexOf(".") == -1) {
 	      return "";
 	    } else {
-	      return f.getName().substring(f.getName().lastIndexOf(".")+1, f.getName().length());
+	      return f.substring(f.lastIndexOf(".")+1, f.length());
 	    }
 	 }
+	
+	
+	/**
+	 * 去掉文件扩展名
+	 * */
+	public static String trimFileExtensionName(File f){
+		return trimFileExtensionName(f.getName());
+	}
+	
+	/**
+	 * 去掉文件扩展名
+	 * */
+	public static String trimFileExtensionName(String f){
+		 if ((f != null) && (f.length() > 0)) { 
+	            int i = f.lastIndexOf('.'); 
+	            if ((i >-1) && (i < (f.length()))) { 
+	                return f.substring(0, i); 
+	            } 
+	        } 
+	     return f; 
 
+	}
+	
 	/**
 	 * @param  String srcFile
 	 * 	   要重命名的文件名

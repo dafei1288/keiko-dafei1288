@@ -49,7 +49,12 @@ public class Unicode2Chinese implements java.io.Serializable {
 	/*
 	public static void main(String[] arg){
 		;
-		System.out.println(Unicode2Chinese.getUnicode("现在就来邀请", "utf-16")+"\u73b0\u5728\u5c31\u6765\u9080\u8bf7");
+		System.out.println("\\u73b0\\u5728\\u5c31\\u6765\\u9080\\u8bf7");
+		System.out.println(Unicode2Chinese.getUnicode("现在就来邀请"));
+		System.out.println(Unicode2Chinese.getUnicode("现在就来邀请","gbk"));
+		System.out.println(Unicode2Chinese.getUnicode("现在就来邀请","utf-8"));
+		
+		System.out.println(Unicode2Chinese.getUnicode("现在就来邀请", "utf-8")+"\u73b0\u5728\u5c31\u6765\u9080\u8bf7");
 		//Unicode2Chinese.toHEXString("");
 	}
 	*/

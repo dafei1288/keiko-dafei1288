@@ -4,12 +4,14 @@ import java.io.IOException;
 import java.io.OutputStream;
 import java.io.PrintStream;
 import java.io.Writer;
+import java.util.Date;
+import java.util.Enumeration;
 
 import javax.servlet.http.HttpServletRequest;
 
 public class RequestProbe {
 	private static PrintStream printer = System.out;
-	
+	public static boolean isUse = true;
 	
 	public static void setAppender(PrintStream writer){
 		printer =  writer;
@@ -17,6 +19,12 @@ public class RequestProbe {
 	
 	
 	public static void printHeader(HttpServletRequest request) throws IOException{
+		if(!isUse) return;
+		printer.println("");
+		printer.println("");
+		printer.println(net.fly78.dafei1288.util.date.DateOption.data2String(new Date()));
+		printer.println(request);
+		printer.println("*******************************************************************************************");
 		printer.println("Protocol: " + request.getProtocol()); 
 		printer.println("Scheme: " + request.getScheme()); 
 		printer.println("Server Name: " + request.getServerName() ); 
@@ -47,6 +55,26 @@ public class RequestProbe {
 		printer.println("Cookie : " + request.getHeader("Cookie")); 
 		printer.println("Created : " + request.getSession().getCreationTime()); 
 		printer.println("LastAccessed : " +  request.getSession().getLastAccessedTime());
+		printer.println("********************************************************************************************");
+		printer.println("");
+		printer.println("");
 	}
 	
+	public static void printParams(HttpServletRequest request) throws IOException{
+		if(!isUse) return;
+		
+		printer.println("");
+		printer.println("");
+		printer.println(net.fly78.dafei1288.util.date.DateOption.data2String(new Date()));
+		printer.println(request);
+		printer.println("*******************************************************************************************");
+		Enumeration em = request.getParameterNames();
+		while(em.hasMoreElements()){
+			String key = (String) em.nextElement();
+			printer.println(key+" : "+request.getParameter(key));
+		}
+		printer.println("********************************************************************************************");
+		printer.println("");
+		printer.println("");
+	}
 }

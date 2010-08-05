@@ -88,6 +88,14 @@ public class Encoding{
         return (javaname[type] + "," + nicename[type] + "," + htmlname[type])
                 .intern();
     }
-
-
+    
+    public void printTable(){
+    	System.out.println("chartset map table");
+    	System.out.println("********************************");
+    	for(int i=0;i<TOTALT;i++){
+    		System.out.println(this.toEncoding(i));
+    	}
+    	System.out.println("********************************");
+    }
+    
 }

@@ -93,9 +93,14 @@ public class Encoding{
     	System.out.println("chartset map table");
     	System.out.println("********************************");
     	for(int i=0;i<TOTALT;i++){
-    		System.out.println(this.toEncoding(i));
+    		System.out.println(i+" "+this.toEncoding(i));
     	}
     	System.out.println("********************************");
+    }
+    
+    
+    public static void main(String[] args){
+    	new Encoding().printTable();
     }
     
 }

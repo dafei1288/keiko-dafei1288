@@ -22,7 +22,7 @@ public class CrackMyeclipseBlue7 {
 		licenseNum = nf.format(Integer.valueOf(licenseNum));
 		String verTime = selected ? (new StringBuffer("-")).append(
 				(new SimpleDateFormat("yyMMdd")).format(cal.getTime())).append(
-				"0").toString() : "-1012310";
+				"0").toString() : "-1112310";
 		String type = "YE3MB-";
 		String need = (new StringBuffer(String.valueOf(userId.substring(0, 1))))
 				.append(type).append(version).append(licenseNum)

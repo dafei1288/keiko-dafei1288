@@ -85,4 +85,17 @@ public class RandomSpilt {
 		this.secendNum = secendNum;
 	}
 	
+	public static void main(String[] args){
+		try {
+			RandomSpilt rs = new RandomSpilt("1-99","-");
+			;
+			for(int i =0;i<100;i++){
+				System.out.println(rs.getNext());
+			}
+			
+			
+		} catch (FormatRandomSpiltException e) {
+			e.printStackTrace();
+		}
+	}
 }

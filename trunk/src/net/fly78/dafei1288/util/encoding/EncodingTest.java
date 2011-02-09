@@ -15,7 +15,7 @@ public class EncodingTest{
         ParseEncoding parse;
 
         parse = new ParseEncoding();
-
+        System.out.println("北路先端="+parse.getEncoding("http://www.jaist.ac.jp/"));
          System.out.println("中国大陆：");
          System.out.println("测试字符串，编码格式="+parse.getEncoding("百度".getBytes()));
          System.out.println("测试站点，编码格式="+parse.getEncoding("http://www.baidu.com"));

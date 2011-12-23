@@ -74,10 +74,13 @@ private static final int BUFFEREDSIZE = 1024;
                     while((c = bis.read()) != -1) {
                         bos.write((byte) c);
                     }
+                    bis.close();
+                    is.close();
                     bos.close();
                     fos.close();
                 }
             }
+            zipFile.close();
         } catch(Exception e) {
             e.printStackTrace();
             throw e;
@@ -134,10 +137,13 @@ private static final int BUFFEREDSIZE = 1024;
                     while((c = bis.read()) != -1) {
                         bos.write((byte) c);
                     }
+                    bis.close();
+                    is.close();
                     bos.close();
                     fos.close();
                 }
             }
+            zipFile.close();
         } catch(Exception e) {
             e.printStackTrace();
             throw e;
